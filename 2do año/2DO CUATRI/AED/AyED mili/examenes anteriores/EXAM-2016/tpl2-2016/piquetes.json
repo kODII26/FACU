@@ -1,0 +1,671 @@
+[
+ {
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": ""
+  },
+  "output": {
+   "ret": 1
+  },
+  "ucase": 0
+ },
+ {
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": "Santo Tome"
+  },
+  "output": {
+   "ret": 0
+  },
+  "ucase": 1
+ },
+ {
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires|Santa Fe:Rosario",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": "Santo Tome"
+  },
+  "output": {
+   "ret": 1
+  },
+  "ucase": 2
+ },
+ {
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires|Santa Fe:Rosario",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": "Santo Tome|Rosario"
+  },
+  "output": {
+   "ret": 0
+  },
+  "ucase": 3
+ },
+ {
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires|Cordoba|Rio Cuarto",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires|Santa Fe:Rosario|Santa Fe:Cordoba|Cordoba:Rio Cuarto|Rio Cuarto:Buenos Aires",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": "Santo Tome|Rosario"
+  },
+  "output": {
+   "ret": 1
+  },
+  "datain": {
+   "cities": "Santa Fe|Santo Tome|Rosario|Buenos Aires|Cordoba|Rio Cuarto",
+   "conns": "Santa Fe:Santo Tome|Santo Tome:Rosario|Rosario:Buenos Aires|Santa Fe:Rosario|Santa Fe:Cordoba|Cordoba:Rio Cuarto|Rio Cuarto:Buenos Aires",
+   "cini": "Santa Fe", "cfin": "Buenos Aires",
+   "piquets": "Cordoba|Rosario"
+  },
+  "output": {
+   "ret": 0
+  },
+  "ucase": 4
+ },
+ {
+      "datain": {
+         "cfin": "Parana",
+         "cini": "Santa Fe",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Parana|Salta|Carlos Paz|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Parana|Santa Fe:Colon|Santa Fe:Santo Tome|Buenos Aires:Rafaela|Rosario:Carlos Paz|Rafaela:Carlos Paz|Parana:Salta|Salta:Esmeralda|Carlos Paz:Esmeralda",
+         "piquets": "Rafaela"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Santa Fe",
+         "cities": "Santa Fe|Rafaela|Parana|Mar del Plata|Carlos Paz|Bariloche|Mendoza|Colon|Esmeralda",
+         "conns": "Santa Fe:Mendoza|Rafaela:Parana|Parana:Mar del Plata|Mar del Plata:Mendoza|Carlos Paz:Bariloche|Bariloche:Esmeralda",
+         "piquets": "Rafaela|Parana|Mar del Plata|Carlos Paz|Colon"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santo Tome",
+         "cini": "Parana",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Parana|Mar del Plata|Salta|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Mar del Plata|Buenos Aires:Mar del Plata|Buenos Aires:Mendoza|Buenos Aires:Santo Tome|Mar del Plata:Santo Tome|Mendoza:Colon|Mendoza:Santo Tome|Santo Tome:Esmeralda",
+         "piquets": ""
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Salta",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Salta|Carlos Paz|Colon|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Esmeralda|Buenos Aires:Colon|Rosario:Carlos Paz|Rosario:Colon|Rafaela:Cordoba|Rafaela:Salta|Rafaela:Esmeralda|Cordoba:Salta|Parana:Salta|Parana:Carlos Paz|Parana:Colon",
+         "piquets": "Buenos Aires|Rosario|Rafaela|Parana|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rosario",
+         "cini": "Bariloche",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Cordoba|Mar del Plata|Salta|Carlos Paz|Bariloche|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Cordoba|Santa Fe:Mar del Plata|Santa Fe:Esmeralda|Buenos Aires:Mar del Plata|Rosario:Rafaela|Rosario:Cordoba|Rafaela:Cordoba|Rafaela:Carlos Paz|Cordoba:Carlos Paz|Bariloche:Santo Tome",
+         "piquets": "Salta|Esmeralda"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santo Tome",
+         "cini": "Mar del Plata",
+         "cities": "Santa Fe|Rosario|Cordoba|Mar del Plata|Salta|Carlos Paz|Bariloche|Santo Tome",
+         "conns": "Santa Fe:Mar del Plata|Santa Fe:Bariloche|Santa Fe:Santo Tome|Rosario:Mar del Plata|Rosario:Salta|Cordoba:Mar del Plata|Cordoba:Santo Tome|Mar del Plata:Carlos Paz|Salta:Santo Tome|Carlos Paz:Bariloche|Bariloche:Santo Tome",
+         "piquets": "Santa Fe|Salta"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Carlos Paz",
+         "cini": "Mendoza",
+         "cities": "Buenos Aires|Cordoba|Parana|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Esmeralda",
+         "conns": "Buenos Aires:Parana|Buenos Aires:Carlos Paz|Cordoba:Carlos Paz|Cordoba:Bariloche|Parana:Carlos Paz|Salta:Mendoza|Salta:Esmeralda|Carlos Paz:Mendoza|Bariloche:Esmeralda|Mendoza:Esmeralda|Colon:Esmeralda",
+         "piquets": "Cordoba|Bariloche"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santo Tome",
+         "cini": "Carlos Paz",
+         "cities": "Buenos Aires|Parana|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome",
+         "conns": "Buenos Aires:Salta|Buenos Aires:Mendoza|Parana:Carlos Paz|Parana:Colon|Salta:Carlos Paz|Carlos Paz:Bariloche|Carlos Paz:Mendoza|Bariloche:Santo Tome|Colon:Santo Tome",
+         "piquets": "Buenos Aires|Salta|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mar del Plata",
+         "cini": "Mendoza",
+         "cities": "Santa Fe|Rosario|Rafaela|Mar del Plata|Bariloche|Mendoza|Colon",
+         "conns": "Santa Fe:Rosario|Santa Fe:Rafaela|Santa Fe:Mar del Plata|Rosario:Rafaela|Rosario:Bariloche|Rafaela:Mar del Plata|Rafaela:Mendoza|Bariloche:Mendoza",
+         "piquets": "Rosario|Bariloche|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Esmeralda",
+         "cini": "Santo Tome",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Mar del Plata|Santa Fe:Salta|Santa Fe:Santo Tome|Buenos Aires:Rafaela|Buenos Aires:Mar del Plata|Buenos Aires:Salta|Buenos Aires:Bariloche|Buenos Aires:Esmeralda|Rosario:Mendoza|Rosario:Santo Tome|Rafaela:Carlos Paz|Rafaela:Mendoza|Mar del Plata:Carlos Paz|Mar del Plata:Colon|Salta:Bariloche|Salta:Esmeralda|Carlos Paz:Bariloche|Carlos Paz:Esmeralda|Bariloche:Mendoza|Colon:Santo Tome",
+         "piquets": "Rafaela|Carlos Paz|Bariloche|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santa Fe",
+         "cini": "Santo Tome",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Bariloche|Santa Fe:Esmeralda|Buenos Aires:Salta|Buenos Aires:Colon|Rosario:Mendoza|Rafaela:Colon|Mar del Plata:Esmeralda|Salta:Colon|Carlos Paz:Esmeralda|Bariloche:Colon|Bariloche:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Rafaela|Mar del Plata|Mendoza|Colon|Esmeralda"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mar del Plata",
+         "cini": "Colon",
+         "cities": "Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Colon",
+         "conns": "Buenos Aires:Rafaela|Buenos Aires:Cordoba|Buenos Aires:Mar del Plata|Rosario:Colon|Rafaela:Mar del Plata|Rafaela:Colon|Cordoba:Parana|Cordoba:Mar del Plata|Cordoba:Colon|Parana:Mar del Plata|Parana:Colon|Mar del Plata:Carlos Paz|Carlos Paz:Colon",
+         "piquets": "Buenos Aires|Rafaela|Salta|Carlos Paz"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Parana",
+         "cini": "Cordoba",
+         "cities": "Santa Fe|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Bariloche|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Parana|Rafaela:Cordoba|Rafaela:Mar del Plata|Rafaela:Santo Tome|Cordoba:Salta|Cordoba:Esmeralda|Parana:Carlos Paz|Parana:Colon|Parana:Esmeralda|Mar del Plata:Bariloche|Salta:Carlos Paz|Salta:Colon|Salta:Esmeralda|Colon:Esmeralda",
+         "piquets": "Santa Fe|Rafaela|Salta|Colon|Santo Tome"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mar del Plata",
+         "cini": "Bariloche",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Carlos Paz|Bariloche|Santo Tome",
+         "conns": "Santa Fe:Mar del Plata|Santa Fe:Bariloche|Rosario:Parana|Rafaela:Parana|Cordoba:Mar del Plata|Parana:Bariloche|Mar del Plata:Bariloche",
+         "piquets": "Rafaela|Santo Tome"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Carlos Paz",
+         "cini": "Mar del Plata",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Mar del Plata|Salta|Carlos Paz|Mendoza|Colon",
+         "conns": "Santa Fe:Mendoza|Santa Fe:Colon|Buenos Aires:Rosario|Buenos Aires:Salta|Buenos Aires:Mendoza|Rosario:Mendoza|Mar del Plata:Salta|Mar del Plata:Mendoza",
+         "piquets": "Rosario|Salta|Mendoza|Colon"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rafaela",
+         "cini": "Santo Tome",
+         "cities": "Santa Fe|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Parana|Santa Fe:Bariloche|Santa Fe:Santo Tome|Rafaela:Mendoza|Cordoba:Carlos Paz|Cordoba:Esmeralda|Parana:Carlos Paz|Parana:Bariloche|Mar del Plata:Salta|Mar del Plata:Bariloche|Mar del Plata:Esmeralda|Salta:Bariloche",
+         "piquets": "Santa Fe|Cordoba|Parana|Bariloche|Mendoza"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mendoza",
+         "cini": "Santo Tome",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Parana|Mar del Plata|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Mar del Plata|Santa Fe:Colon|Santa Fe:Santo Tome|Buenos Aires:Rafaela|Buenos Aires:Mar del Plata|Buenos Aires:Santo Tome|Rosario:Colon|Parana:Mendoza|Parana:Santo Tome|Bariloche:Colon|Bariloche:Esmeralda|Mendoza:Santo Tome|Colon:Santo Tome|Colon:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Rafaela|Parana|Mar del Plata|Bariloche|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santo Tome",
+         "cini": "Rafaela",
+         "cities": "Santa Fe|Buenos Aires|Rafaela|Salta|Carlos Paz|Bariloche|Mendoza|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Carlos Paz|Rafaela:Carlos Paz|Rafaela:Santo Tome|Salta:Carlos Paz|Salta:Esmeralda|Carlos Paz:Mendoza|Carlos Paz:Santo Tome|Bariloche:Esmeralda",
+         "piquets": "Buenos Aires|Salta|Mendoza"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Esmeralda",
+         "cini": "Colon",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Parana|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Buenos Aires|Santa Fe:Rosario|Santa Fe:Bariloche|Santa Fe:Mendoza|Buenos Aires:Santo Tome|Buenos Aires:Esmeralda|Rosario:Bariloche|Rosario:Santo Tome|Rafaela:Mendoza|Rafaela:Esmeralda|Parana:Bariloche|Parana:Mendoza|Parana:Esmeralda|Bariloche:Colon|Mendoza:Santo Tome|Santo Tome:Esmeralda",
+         "piquets": "Buenos Aires|Rafaela|Parana|Carlos Paz|Bariloche"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Santo Tome",
+         "cities": "Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Carlos Paz|Bariloche|Colon|Santo Tome|Esmeralda",
+         "conns": "Buenos Aires:Rafaela|Buenos Aires:Parana|Buenos Aires:Bariloche|Buenos Aires:Santo Tome|Rafaela:Cordoba|Rafaela:Parana|Cordoba:Bariloche|Cordoba:Esmeralda|Parana:Mar del Plata|Parana:Colon|Mar del Plata:Carlos Paz|Carlos Paz:Bariloche|Bariloche:Santo Tome|Santo Tome:Esmeralda",
+         "piquets": "Buenos Aires|Parana|Carlos Paz|Colon|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Salta",
+         "cini": "Mendoza",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Mendoza|Colon",
+         "conns": "Santa Fe:Cordoba|Santa Fe:Parana|Santa Fe:Mar del Plata|Santa Fe:Salta|Santa Fe:Colon|Rosario:Parana|Rosario:Mendoza|Rafaela:Parana|Cordoba:Mar del Plata|Cordoba:Carlos Paz|Parana:Salta|Parana:Colon|Mar del Plata:Salta|Mar del Plata:Carlos Paz|Mar del Plata:Colon|Salta:Carlos Paz|Carlos Paz:Colon",
+         "piquets": ""
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mendoza",
+         "cini": "Rafaela",
+         "cities": "Buenos Aires|Rosario|Rafaela|Parana|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Esmeralda",
+         "conns": "Buenos Aires:Rafaela|Buenos Aires:Mendoza|Buenos Aires:Colon|Rosario:Salta|Rosario:Colon|Rosario:Esmeralda|Rafaela:Carlos Paz|Rafaela:Mendoza|Parana:Carlos Paz|Parana:Esmeralda|Carlos Paz:Bariloche|Bariloche:Mendoza|Colon:Esmeralda",
+         "piquets": "Buenos Aires|Carlos Paz"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rosario",
+         "cini": "Cordoba",
+         "cities": "Rosario|Rafaela|Cordoba|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome",
+         "conns": "Rosario:Mar del Plata|Rosario:Salta|Rosario:Santo Tome|Rafaela:Cordoba|Rafaela:Mendoza|Cordoba:Salta|Cordoba:Bariloche|Cordoba:Colon|Mar del Plata:Salta|Salta:Mendoza|Salta:Santo Tome|Bariloche:Mendoza|Bariloche:Colon|Colon:Santo Tome",
+         "piquets": "Rafaela|Carlos Paz"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Buenos Aires",
+         "cities": "Buenos Aires|Cordoba|Parana|Mendoza|Colon|Santo Tome",
+         "conns": "Buenos Aires:Parana|Buenos Aires:Colon|Buenos Aires:Santo Tome",
+         "piquets": ""
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Santo Tome",
+         "cini": "Buenos Aires",
+         "cities": "Santa Fe|Buenos Aires|Cordoba|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Buenos Aires|Santa Fe:Salta|Santa Fe:Colon|Santa Fe:Santo Tome|Cordoba:Salta|Mar del Plata:Salta|Mar del Plata:Carlos Paz|Mar del Plata:Colon|Mar del Plata:Esmeralda|Salta:Mendoza|Salta:Colon|Carlos Paz:Mendoza|Carlos Paz:Esmeralda|Bariloche:Mendoza|Mendoza:Santo Tome|Santo Tome:Esmeralda",
+         "piquets": "Salta|Carlos Paz|Bariloche|Mendoza"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Parana",
+         "cini": "Santo Tome",
+         "cities": "Buenos Aires|Rosario|Cordoba|Parana|Mar del Plata|Salta|Mendoza|Colon|Santo Tome",
+         "conns": "Buenos Aires:Salta|Cordoba:Parana|Parana:Santo Tome|Mar del Plata:Salta",
+         "piquets": "Rosario|Mendoza|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rafaela",
+         "cini": "Colon",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Mendoza|Colon|Esmeralda",
+         "conns": "Santa Fe:Parana|Rosario:Parana|Rafaela:Parana|Rafaela:Mar del Plata|Rafaela:Salta|Rafaela:Colon|Cordoba:Parana|Cordoba:Salta|Cordoba:Colon|Mar del Plata:Carlos Paz|Mar del Plata:Mendoza|Mar del Plata:Colon|Salta:Carlos Paz|Carlos Paz:Mendoza|Mendoza:Esmeralda",
+         "piquets": "Mar del Plata|Salta|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Parana",
+         "cities": "Rafaela|Cordoba|Parana|Mar del Plata|Carlos Paz|Bariloche|Mendoza|Esmeralda",
+         "conns": "Rafaela:Mar del Plata|Rafaela:Esmeralda|Cordoba:Carlos Paz|Cordoba:Mendoza|Cordoba:Esmeralda|Parana:Bariloche|Mar del Plata:Carlos Paz|Mar del Plata:Bariloche|Mar del Plata:Esmeralda|Carlos Paz:Bariloche",
+         "piquets": "Cordoba|Mar del Plata|Carlos Paz"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Mendoza",
+         "cities": "Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Buenos Aires:Parana|Rosario:Mar del Plata|Rosario:Bariloche|Rosario:Colon|Cordoba:Parana|Cordoba:Mar del Plata|Cordoba:Bariloche|Cordoba:Mendoza|Parana:Mar del Plata|Parana:Bariloche|Parana:Esmeralda|Mar del Plata:Santo Tome|Mendoza:Santo Tome|Colon:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Buenos Aires|Bariloche"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Colon",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Mendoza|Colon",
+         "conns": "Santa Fe:Salta|Buenos Aires:Rosario|Buenos Aires:Cordoba|Buenos Aires:Parana|Rafaela:Cordoba|Rafaela:Salta|Rafaela:Mendoza|Cordoba:Parana|Parana:Mendoza|Salta:Mendoza",
+         "piquets": "Santa Fe|Buenos Aires|Parana|Salta"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Parana",
+         "cini": "Rosario",
+         "cities": "Rosario|Rafaela|Parana|Mar del Plata|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Rosario:Santo Tome|Rafaela:Santo Tome|Rafaela:Esmeralda|Parana:Mar del Plata|Mar del Plata:Carlos Paz|Mar del Plata:Bariloche|Mar del Plata:Colon|Carlos Paz:Bariloche|Bariloche:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Bariloche|Mendoza|Esmeralda"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rafaela",
+         "cini": "Rosario",
+         "cities": "Buenos Aires|Rosario|Rafaela|Parana|Salta|Carlos Paz|Mendoza",
+         "conns": "Buenos Aires:Rafaela|Buenos Aires:Mendoza|Rosario:Carlos Paz|Parana:Salta|Parana:Mendoza",
+         "piquets": "Buenos Aires|Salta"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Carlos Paz",
+         "cini": "Buenos Aires",
+         "cities": "Buenos Aires|Rafaela|Parana|Mar del Plata|Salta|Carlos Paz|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Buenos Aires:Carlos Paz|Buenos Aires:Esmeralda|Rafaela:Santo Tome|Rafaela:Esmeralda|Parana:Salta|Parana:Santo Tome|Parana:Esmeralda|Mar del Plata:Carlos Paz|Mar del Plata:Santo Tome|Salta:Mendoza|Salta:Esmeralda|Carlos Paz:Santo Tome|Mendoza:Colon|Colon:Santo Tome",
+         "piquets": "Mar del Plata|Santo Tome|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mendoza",
+         "cini": "Cordoba",
+         "cities": "Rosario|Rafaela|Cordoba|Salta|Bariloche|Mendoza|Santo Tome|Esmeralda",
+         "conns": "Rosario:Rafaela|Rafaela:Bariloche|Cordoba:Bariloche|Bariloche:Mendoza|Bariloche:Esmeralda|Mendoza:Santo Tome",
+         "piquets": "Rosario|Rafaela|Bariloche"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Salta",
+         "cini": "Mar del Plata",
+         "cities": "Santa Fe|Rosario|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Mendoza|Colon|Santo Tome",
+         "conns": "Santa Fe:Rosario|Santa Fe:Cordoba|Santa Fe:Salta|Santa Fe:Carlos Paz|Rosario:Cordoba|Cordoba:Salta|Cordoba:Mendoza|Parana:Salta|Parana:Colon|Mar del Plata:Salta|Carlos Paz:Mendoza|Carlos Paz:Santo Tome|Mendoza:Santo Tome",
+         "piquets": "Parana|Colon"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Esmeralda",
+         "cini": "Buenos Aires",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Carlos Paz|Bariloche|Mendoza|Esmeralda",
+         "conns": "Santa Fe:Buenos Aires|Santa Fe:Esmeralda|Buenos Aires:Rafaela|Buenos Aires:Carlos Paz|Rosario:Carlos Paz|Rafaela:Parana|Rafaela:Carlos Paz|Cordoba:Mar del Plata|Cordoba:Bariloche|Cordoba:Mendoza|Parana:Mar del Plata|Mar del Plata:Carlos Paz|Carlos Paz:Esmeralda",
+         "piquets": "Santa Fe|Rosario"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mar del Plata",
+         "cini": "Cordoba",
+         "cities": "Santa Fe|Rosario|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Santo Tome",
+         "conns": "Santa Fe:Mar del Plata|Santa Fe:Santo Tome|Rosario:Mendoza|Cordoba:Parana|Cordoba:Salta|Parana:Salta|Mar del Plata:Salta|Mar del Plata:Carlos Paz|Mar del Plata:Bariloche|Mar del Plata:Santo Tome|Salta:Carlos Paz|Carlos Paz:Bariloche|Carlos Paz:Santo Tome",
+         "piquets": "Carlos Paz|Bariloche|Santo Tome"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Bariloche",
+         "cities": "Cordoba|Parana|Mar del Plata|Carlos Paz|Bariloche",
+         "conns": "Cordoba:Parana|Parana:Carlos Paz|Mar del Plata:Bariloche",
+         "piquets": "Mar del Plata|Carlos Paz"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Colon",
+         "cini": "Mendoza",
+         "cities": "Parana|Mar del Plata|Salta|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Parana:Bariloche|Parana:Santo Tome|Mar del Plata:Mendoza|Mar del Plata:Esmeralda|Salta:Bariloche|Bariloche:Colon|Bariloche:Esmeralda|Colon:Esmeralda",
+         "piquets": "Santo Tome"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Mendoza",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Parana|Salta|Carlos Paz|Bariloche|Mendoza|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Rosario:Parana|Rosario:Carlos Paz|Rafaela:Parana|Rafaela:Mendoza|Parana:Bariloche|Salta:Mendoza|Carlos Paz:Bariloche|Mendoza:Esmeralda",
+         "piquets": "Parana|Esmeralda"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rafaela",
+         "cini": "Santa Fe",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Mar del Plata|Salta|Carlos Paz|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Mendoza|Santa Fe:Esmeralda|Rafaela:Carlos Paz|Rafaela:Bariloche|Rafaela:Mendoza|Cordoba:Salta|Mar del Plata:Carlos Paz|Mar del Plata:Colon|Mar del Plata:Esmeralda|Carlos Paz:Colon|Mendoza:Santo Tome|Colon:Esmeralda",
+         "piquets": "Cordoba|Mendoza"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Mar del Plata",
+         "cities": "Santa Fe|Rosario|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Bariloche|Santo Tome|Esmeralda",
+         "conns": "Rosario:Salta|Rosario:Carlos Paz|Rosario:Santo Tome|Rosario:Esmeralda|Cordoba:Mar del Plata|Parana:Bariloche|Mar del Plata:Carlos Paz|Salta:Esmeralda|Carlos Paz:Bariloche|Carlos Paz:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Santa Fe|Carlos Paz|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Santa Fe",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Parana|Salta|Carlos Paz|Bariloche|Colon",
+         "conns": "Santa Fe:Rosario|Santa Fe:Rafaela|Santa Fe:Cordoba|Rosario:Rafaela|Rosario:Cordoba|Rafaela:Salta",
+         "piquets": "Parana|Salta"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Rosario",
+         "cini": "Santo Tome",
+         "cities": "Santa Fe|Rosario|Rafaela|Cordoba|Parana|Mar del Plata|Salta|Carlos Paz|Mendoza|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Parana|Santa Fe:Santo Tome|Rosario:Mar del Plata|Rosario:Mendoza|Rafaela:Cordoba|Rafaela:Mar del Plata|Rafaela:Carlos Paz|Parana:Salta|Parana:Esmeralda|Carlos Paz:Mendoza|Mendoza:Santo Tome",
+         "piquets": "Salta"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Carlos Paz",
+         "cities": "Santa Fe|Cordoba|Mar del Plata|Carlos Paz|Bariloche|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Mar del Plata|Cordoba:Santo Tome|Mar del Plata:Carlos Paz|Mar del Plata:Bariloche|Bariloche:Colon|Colon:Santo Tome",
+         "piquets": "Colon|Esmeralda"
+      },
+      "output": {
+         "ret": 0
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Esmeralda",
+         "cini": "Cordoba",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Rafaela|Cordoba|Mar del Plata|Carlos Paz|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rafaela|Santa Fe:Carlos Paz|Santa Fe:Santo Tome|Buenos Aires:Cordoba|Buenos Aires:Colon|Rosario:Rafaela|Rosario:Carlos Paz|Rosario:Esmeralda|Rafaela:Mar del Plata|Cordoba:Mar del Plata|Cordoba:Carlos Paz|Mar del Plata:Colon|Mar del Plata:Esmeralda|Carlos Paz:Colon|Mendoza:Esmeralda|Colon:Esmeralda",
+         "piquets": "Rafaela|Mendoza|Santo Tome"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Mar del Plata",
+         "cini": "Rosario",
+         "cities": "Santa Fe|Rosario|Rafaela|Parana|Mar del Plata|Salta|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Rosario|Santa Fe:Esmeralda|Rosario:Salta|Rafaela:Mar del Plata|Rafaela:Esmeralda|Mar del Plata:Santo Tome|Santo Tome:Esmeralda",
+         "piquets": "Rafaela"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Carlos Paz",
+         "cities": "Mar del Plata|Salta|Carlos Paz|Bariloche|Colon|Santo Tome|Esmeralda",
+         "conns": "Mar del Plata:Salta|Mar del Plata:Colon|Mar del Plata:Santo Tome|Mar del Plata:Esmeralda|Salta:Carlos Paz|Salta:Esmeralda|Carlos Paz:Colon|Bariloche:Colon|Bariloche:Santo Tome|Bariloche:Esmeralda|Santo Tome:Esmeralda",
+         "piquets": "Mar del Plata|Santo Tome|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Cordoba",
+         "cini": "Bariloche",
+         "cities": "Santa Fe|Cordoba|Parana|Salta|Bariloche|Mendoza|Colon|Santo Tome|Esmeralda",
+         "conns": "Santa Fe:Bariloche|Santa Fe:Mendoza|Santa Fe:Esmeralda|Cordoba:Parana|Cordoba:Santo Tome|Parana:Mendoza|Salta:Bariloche|Salta:Mendoza|Mendoza:Colon|Mendoza:Santo Tome|Colon:Santo Tome",
+         "piquets": "Santa Fe|Colon|Esmeralda"
+      },
+      "output": {
+         "ret": 1
+      }
+   },
+   {
+      "datain": {
+         "cfin": "Bariloche",
+         "cini": "Colon",
+         "cities": "Santa Fe|Buenos Aires|Rosario|Parana|Mar del Plata|Salta|Bariloche|Mendoza|Colon",
+         "conns": "Buenos Aires:Salta|Buenos Aires:Bariloche|Buenos Aires:Colon|Rosario:Mar del Plata|Rosario:Bariloche|Rosario:Mendoza|Parana:Salta|Parana:Bariloche|Parana:Colon|Salta:Mendoza|Salta:Colon|Bariloche:Mendoza|Bariloche:Colon",
+         "piquets": "Santa Fe|Rosario|Mar del Plata|Salta|Mendoza"
+      },
+      "output": {
+         "ret": 1
+      }
+   }
+]

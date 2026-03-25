@@ -1,0 +1,36 @@
+.data
+array: .word 1,2,-3,4,5,-6,7
+Resultado: .word 1
+.text
+main:
+li t0,1 #prod=1
+li t2,0 #i=0
+li a0,0 #contador de numeros ya contados
+li a1,4 #objetivo de numeros a contar
+li a2,7 #tamanio del arreglo
+la t1,array #base del arreglo
+
+loop:
+beq a0,a1,done #verifico si ya conte 4 positivos
+bge t2,a2,done #verifico si ya termino el arreglo
+
+slli t4,t2,2 #offset =i*4
+add t5,t1,t4 #array[i]
+lw t6,0(t5) #val=array[i]
+
+blt x0,t6,es_pos #si el avlor es menor a 0 me voy a la etiqueta definida es_pos
+
+skip: #si el valor es menor o igual a 0 entonces no cuenta por lo q debo iterar
+addi t2,t2,1 #itero
+j loop
+es_pos:
+mul t0,t0,t6
+addi a0,a0,1 #sumo el contador de numeros ya contados
+addi t2,t2,1 #itero normalmente sobre el arreglo
+j loop
+done:
+la a4,Resultado
+sw t0,0(a4)
+halt:
+j halt
+   

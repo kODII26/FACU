@@ -1,0 +1,35 @@
+.data
+n: .word 3
+resultado: .word 0
+
+.text
+.globl main
+main:
+	la t0,n # n
+	lw a0,0(t0)
+	li a1,0 # resultado
+	
+	li t1,0 # contador
+	li t6,0 # segundo contador para cierre
+	j for 
+	
+for:
+	beq t6,a0,fin
+	andi t5,t1,1 #extrae el ultimo bit
+	bne  t5, x0, contar  # si impar, sumar
+	addi t1,t1,1
+	j for
+	
+	
+contar:
+	add a1,a1,t1
+	addi t1,t1,1
+	addi t6,t6,1
+	j for
+	
+fin:
+	la t4,resultado
+	sw a1,0(t4)
+	ecall
+	
+	

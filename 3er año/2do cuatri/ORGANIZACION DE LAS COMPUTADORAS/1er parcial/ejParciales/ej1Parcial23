@@ -1,0 +1,31 @@
+.data 
+n: .word 12
+x: .word 0
+
+.text
+.globl main
+main:
+	la t0,n
+	lw a0,0(t0) # n
+	
+	la t1,x
+	lw a1,0(t1) # x
+	
+	
+	li a3, 1 # resultado
+	
+	j loop
+	
+loop:
+	ble a3,a0,siguiente
+	addi a1,a1,-1
+	j fin
+	
+siguiente:
+	addi a1,a1,1
+	slli a3, a3, 1 #mas rapido que mul
+	j loop
+	
+fin:
+	sw a1,0(t1)
+	ecall

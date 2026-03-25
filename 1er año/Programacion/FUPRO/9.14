@@ -1,0 +1,50 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+struct Complejo {
+	float a;
+	float b;
+};
+
+Complejo sumar(Complejo x, Complejo y){
+	Complejo resultado;
+	resultado.a= x.a+y.a; 
+	resultado.b= x.b+y.b;
+	return resultado;
+}
+Complejo restar(Complejo x, Complejo y){
+	Complejo resultado;
+	resultado.a= x.a-y.a; 
+	resultado.b= x.b-y.b;
+	return resultado;
+}	
+Complejo multiplicar(Complejo x, Complejo y){
+	Complejo resultado;
+	resultado.a= x.a*y.a+(-1*(x.b*y.b));
+	resultado.b= x.b*y.a+x.a*y.b;
+	return resultado;
+}
+int main() {
+	string opcion;
+	Complejo x,y,resultado;
+	cout<<"ingrese complejo x:"<<endl;
+	cin>>x.a>>x.b;
+	cout<<"ingrese complejo y:"<<endl;
+	cin>>y.a>>y.b;
+	cout<<"Que queres hacer capo"<<endl<<"Sumar"<<endl<<"Restar"<<endl<<"Multiplicar"<<endl;
+	cin>>opcion;
+	if (opcion=="Sumar") {
+		resultado= sumar(x,y);
+		cout<<"La suma de los dos complejos dio: "<<resultado.a<<" y "<<resultado.b;
+	}
+	if (opcion=="Restar"){
+		resultado = restar(x,y);
+		cout<<"La resta de los dos complejos dio: "<<resultado.a<<" y "<<resultado.b;
+	} else {
+		resultado = multiplicar(x,y);
+		cout<<"La multiplicacion de los dos complejos dio: "<<resultado.a<<" y "<<resultado.b;
+	}
+	
+	return 0;
+}
+

@@ -1,0 +1,38 @@
+.data
+	texto: .asciz "Hola"
+	
+.text
+.globl main
+main:
+	la t0, texto # puntero inicio
+	la t1, texto # puntero final, al principio apunta al inicio
+			
+encontrar_fin:
+	lb t2,0(t1)
+	beq t2,x0,atras
+	addi t1,t1,1
+
+atras:
+	addi t1,t1,-1 # t1 ahora apunta al ultimo caracter valido
+	j loop
+
+loop:
+	bgeu t0,t1,fin
+	lb t3,0(t0)
+	lb t4,0(t1)
+	
+	sb t3,0(t1)
+	sb t4,0(t0)
+	
+	addi t0,t0,1
+	addi t1,t1,-1
+	
+fin:
+	ret
+	
+		
+	
+	
+	
+	
+	

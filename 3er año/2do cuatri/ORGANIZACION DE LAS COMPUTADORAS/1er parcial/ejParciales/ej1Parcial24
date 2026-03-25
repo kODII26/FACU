@@ -1,0 +1,45 @@
+.data
+empleados:  .word 4
+sMax:       .word 0x001B7635        # 1.799.733
+sueldos:    .word 11, 17, 11, 40    # sueldos base
+hijos:      .word 1, 2, 3, 4        # hijos por empleado
+
+.text
+.globl main
+main:
+    la   t0, sueldos                # ptr sueldos[i]
+    la   t1, hijos                  # ptr hijos[i]
+    la   t2, empleados
+    lw   t3, 0(t2)                  # N
+    la   t4, sMax
+    lw   t5, 0(t4)                  # sMax
+    li   t6, 44000                  # importe por hijo
+    li   t7, 0                      # i = 0
+
+for_loop:
+    beq  t7, t3, fin                # fin si i==N
+
+# Los lw de arrays van adentro del loop para q se actualizen en cada it
+    lw   a0, 0(t0)                  # a0 = sueldo base
+    lw   a1, 0(t1)                  # a1 = hijos
+
+    bgt  a0, t5, skip_allowance     # si base > sMax -> NO sumar
+
+    mul  a2, a1, t6                 # a2 = hijos * 44000
+    add  a0, a0, a2                 # a0 = base + plus
+    sw   a0, 0(t0)                  # guardar actualizado
+    j    next
+
+skip_allowance:
+    sw   a0, 0(t0)                  # dejar sueldo base tal cual
+
+next:
+    addi t0, t0, 4
+    addi t1, t1, 4
+    addi t7, t7, 1
+    j    for_loop
+
+fin:
+    li   a7, 10
+    ecall
+    

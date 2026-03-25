@@ -1,0 +1,40 @@
+diff -ub tpl3-novara-v1/aedtools/evalbase.hpp tpl3-novara-v2/aedtools/evalbase.hpp
+--- tpl3-novara-v1/aedtools/evalbase.hpp	2016-10-31 09:35:37.000000000 -0300
++++ tpl3-novara-v2/aedtools/evalbase.hpp	2016-10-31 14:11:35.000000000 -0300
+@@ -583,11 +583,11 @@
+     template<typename Q>
+     string lisp_print(btree<Q> &T,typename btree<Q>::iterator n) {
+       ostringstream os;
+-      if (n==T.end()) return " . ";
++      if (n==T.end()) return ".";
+       typename btree<Q>::iterator
+         nl = n.left(),
+         nr = n.right();
+-      if (nl==T.end() && nr==T.end()) os << " " << *n << " ";
++      if (nl==T.end() && nr==T.end()) os << *n;
+       else os << "(" << *n << " "
+               << lisp_print(T,nl) << " "
+               << lisp_print(T,nr) << ")";
+@@ -716,12 +716,14 @@
+     }
+ 
+     // -----------------------------------------------------------------
++  public:
+     void make_random_btree(btree<int> &t,int m,double siblings,
+                            randomg_t &rnd) {
+       t.clear();
+       make_random_btree(t,t.begin(),m,0,siblings,rnd);
+     } 
+ 
++  private:
+     void hash(hasher_t &hasher,tree<int> &T) {
+       list<int> L;
+       preorder(T,L);
+@@ -823,6 +825,7 @@
+       cout << "----------------\nEvaluando ejercicio " 
+            << ejerc << endl;
+       ifstream in(testfile);
++      if (!in.is_open()) { cerr << "Error abriendo " << testfile << endl; exit(1); }
+       json tests;
+       in >> tests;
+       int caso = 0, okt = 0;

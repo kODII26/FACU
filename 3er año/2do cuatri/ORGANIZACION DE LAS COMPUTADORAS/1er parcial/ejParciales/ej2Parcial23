@@ -1,0 +1,52 @@
+.data
+v: .word 345,457,67,456,2425,5876,354,12,23,400,677,44,2344,1123,56,333,112,556,444,45
+size: .word 20
+resultado: .word 0
+
+.text
+.globl main
+main:
+	la t0,size
+	lw a0,0(t0) #Size 
+
+
+	li t1, 0xA0000000 #Cuando me dice que esta almacenado en una direccion, se carga asi,
+		#la direccion siginfica que el vector no esta en el .data sino que esta en una direc fija
+	
+	#la t1,v  #Asi es para cargar del data
+
+	li t2,0 #contador
+	li t3,0 # contador casos positivos
+	li t4,400 #comparador
+
+	j for
+
+for:
+	beq t2,a0,fin
+	lw t5,0(t1)
+	bgt t5,t4,contarElem
+	
+	j siguiente
+	
+	
+siguiente:
+	addi t2,t2,1
+	addi t1,t1,4
+	j for
+	
+contarElem:
+	addi t3,t3,1
+	j siguiente
+	
+fin:
+	la t6,resultado
+	sw t3,0(t6)
+	ecall
+	
+
+
+
+
+
+
+

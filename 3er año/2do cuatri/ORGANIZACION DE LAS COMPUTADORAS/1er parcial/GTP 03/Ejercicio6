@@ -1,0 +1,43 @@
+.data
+	string: .asciz "anitalavlatina"
+	lenght: .word 14
+	
+.text
+.globl main
+main:	
+	# Retorno en a0 
+	addi a0,x0,1 #Suponemos palindromo por defecto hasta probar lo contrario
+	
+	# Puntero al principio
+	la t0, string
+	
+	# Puntero al final 
+	la t1, string
+	la t2, lenght
+	lw t3, 0(t2)
+	add t1, t1, t3 # t1= string + 14
+	# En strings cada caracter mide 1 byte
+		
+es_palindromo:
+	bgeu t0,t1, fin_ok
+	
+	lb t4, 0(t0)
+	lb t5, 0(t1)
+	
+	bne t4,t5,fin_no
+	
+	addi t0,t0,1
+	addi t1,t1,-1
+	
+fin_ok:
+	# a0 ya es 1
+	ret
+	
+fin_no:
+	addi a0,x0,0
+	ret
+	
+	
+	
+	
+	

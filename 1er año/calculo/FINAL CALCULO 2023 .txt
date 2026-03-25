@@ -1,0 +1,27 @@
+ULTIMO DIA DE ESTUDIO:
+POL Y SERIES DE TAYLOR (MAS QUE NADA DESARROLLAR POR COEFICIENTES)
+probl optimiacion (tmb fractales)
+INTEGRALES POR PARTES
+
+
+EN EL RESUMEN FALTA:
+semejanza triangulo 
+definicion funcion integrable 
+f puede ser integrable sin ser continua 
+
+CCD:
+Asegurate de encontrar la desigualdad necesaria (menor o mayor dependiendo del caso) con una funcion, y luego
+vas pasando los numeros o exponentes hasta que la funcion que compara es una conocida o facilmente calculable su convergencia
+
+Semejanza triangulo
+Con que un lado sea paralelo al mismo lado del otro triangulo, ya son semejantes
+Rectas:
+1) Buscas una pendiente que sepas que sirve
+2) Buscas en que momento la recta que tenes que hallar, tiene esa pendiente (igualando la derivada a la pendiente hallada)
+3) El resultado es un punto x, calculas el punto que vas a usar para formar la ecuacion con (x,f(x))
+4) Resolves las ecuaciones
+M.N= -1 (M pend de una recta, y N pend de la recta normal, tienen que dar -1 porq son inversas)
+
+AÑO PROXIMO:
+ UN SOLO LIBRO PARA TEORIA, TOMAS LOS APUNTES EN EL LIBRO, Y CUANDO VEAS LOS VIDEOS Y RESUMAS, LO HACES A PARTIR DE LA OTRA HOJA,
+ASI LUEGO SACAS LAS HOJAS QUE ERAN APUNTES DE CLASES Y SOLO QUEDA EL APUNTE PROLIJO Y RESUMIDO CON CLASES + VIDEO

@@ -1,0 +1,171 @@
+## -*- mode: cmake -*-
+cmake_minimum_required(VERSION 2.6)
+if(($ENV{HOSTNAME} STREQUAL galileo) OR ($ENV{HOSTNAME} STREQUAL urubu))
+  message("setting CMP0074 policy")
+  cmake_policy(SET CMP0074 OLD)
+endif()
+project(libuserfuns)
+
+## ================= BEGIN USER CONFIG =============================
+
+## Optimized version
+set(CXXOPTFLAGS "-fopenmp -O2 -funroll-loops")
+
+## Debug version
+## set(CXXOPTFLAGS "-fopenmp -O0 -g3") 
+set(CMAKE_BUILD_TYPE "Debug")
+
+set(PFPCKGDIR $ENV{HOME}/PETSC/petscfem-packages)
+set (FMT_ROOT /usr)
+
+if($ENV{HOSTNAME} STREQUAL galileo)
+##  set(HDF5_ROOT /home/scratch/mstorti/SALOME-8.4.0-native-FD26-SRC/BINARIES-FD26/hdf5)
+  set(HDF5_ROOT /home/mstorti/SOFT/hdf5-1814)
+  set(CS_ROOT /home/scratch/mstorti/TO-BACKUP/DATA-CD/saturne-opt)
+  set(PETSC_DIR /home/mstorti/PETSC/petsc-3.2-p7)
+  ## set(PETSC_ARCH arch-linux2-c-debug)
+  set(PETSC_ARCH linux-gnu-O)
+  set(PETSC_ROOT ${PETSC_DIR}/${PETSC_ARCH})
+elseif($ENV{HOSTNAME} STREQUAL urubu)
+  set(PUB /share/storage/pub/mstorti)
+  set(HDF5_ROOT ${PUB}/hdf5-1814)
+  set(CS_ROOT ${PUB}/saturne-vof)
+  set(PETSC_DIR ${PUB}/petsc-3.2-p7)
+  set(PETSC_ARCH linux-gnu-O)
+  set(PETSC_ROOT ${PETSC_DIR}/${PETSC_ARCH})
+  set(PFPCKGDIR ${PUB}/petscfem-packages)
+elseif($ENV{HOSTNAME} STREQUAL wilbur)
+#  set(HDF5_ROOT /opt/salome-8.2.0/Salome-V8_2_0-univ/prerequisites/Hdf5-1814)
+  set(HDF5_ROOT /home/mstorti/SOFT/hdf5-1814)
+  set(CS_ROOT /home/mstorti/code-saturne)
+  set(PETSC_ROOT $ENV{HOME}/PETSC/petsc-3.7.4/linux-gnu-O)
+elseif($ENV{HOSTNAME} STREQUAL orville)
+  set(HDF5_ROOT /home/mstorti/salome/Salome-V8_4_0-univ/prerequisites/Hdf5-1814)
+  set(CS_ROOT /home/mstorti/code-saturne)
+  set(PETSC_ROOT $ENV{HOME}/PETSC/petsc-3.7.4/linux-gnu-O)
+elseif($ENV{HOSTNAME} STREQUAL cluster62)
+  set(PUB /share/storage/pub/mstorti)
+  set(HDF5_ROOT ${PUB}/hdf5-1814)
+  set(CS_ROOT ${PUB}/saturne-vof)
+  set(PETSC_ROOT ${PUB}/petsc-3.2-p7/linux-gnu-O)
+  list(APPEND CMAKE_PREFIX_PATH /share/apps/eigen/3.3.4/share/eigen3/cmake)
+  set(JSONCPP_INCLUDE_DIRS /share/apps/jsoncpp/1.8.4/include)
+  find_library(JSONCPP_LIBRARIES jsoncpp PATHS )
+  set (MPI_C_COMPILER mpicc)
+  set (MPI_CXX_COMPILER mpicxx)
+  set (MPI_CXX_COMPILER mpicxx)
+  set(PFPCKGDIR ${PUB}/petscfem-packages)
+  ## set(fmt_DIR /home/mstorti/SOFT/fmtlib/usr/local/lib64/cmake/fmt)
+  ## find_package(fmt REQUIRED)
+  set (FMT_ROOT ${PUB}/fmtlib/usr/local)
+elseif($ENV{HOSTNAME} STREQUAL seshat)
+  set(HDF5_ROOT $ENV{HOME}/SOFT/hdf5-1814)
+  set(CS_ROOT /home/mstorti/SOFT/saturne-opt) 
+  set(PETSC_ROOT $ENV{HOME}/PETSC/petsc-3.2-p7/linux-gnu-O)
+  list(APPEND CMAKE_PREFIX_PATH /share/apps/easybuild/software/Eigen/3.3.7/share/eigen3/cmake)
+  set(JSONCPP_INCLUDE_DIRS /home/mstorti/SOFT/jsoncpp/include)
+  find_library(/home/mstorti/SOFT jsoncpp PATHS )
+  set (MPI_C_COMPILER mpicc)
+  set (MPI_CXX_COMPILER mpicxx)
+elseif($ENV{HOSTNAME} STREQUAL coyote)
+  set(HDF5_ROOT /u/mstorti/SOFT/hdf5-1.8.14)
+  ## /usr/local/salome/Salome-V7_6_0-x86_64/prerequisites/Hdf5-1810)
+  set(CS_ROOT $ENV{HOME}/PETSC/code-saturne)
+  set(PETSC_ROOT $ENV{HOME}/PETSC/petsc-3.2-p7/arch-linux2-c-debug)
+  set(JSONCPP_INCLUDE_DIRS /usr/local/jsoncpp/1.8.4/include)
+  find_library(JSONCPP_LIBRARIES jsoncpp PATHS /usr/local/jsoncpp/1.8.4/lib64/)
+  set(EIGEN3_INCLUDE_DIRS /usr/local/eigen/3.3.5/include/eigen3)
+else(FALSE) ## Laptop Julian Medina
+  set(HDF5_ROOT /home/jmedina/salome/Salome-V8_5_0-univ_public/prerequisites/Hdf5-1814)
+  set(CS_ROOT /home/jmedina/Code_Saturne/5.0.10/code_saturne-5.0.10/arch/Linux_x86_64)
+  set(PFPCKGDIR $ENV{HOME}/petscfem-packages)
+endif()
+
+## ================= END USER CONFIG=============================
+
+set(BUILD_SHARED_LIBS ON)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake-modules)
+find_package(PkgConfig REQUIRED)
+find_package(MPI)
+find_package(OpenMP REQUIRED)
+
+## I don't know why I do some config here for PETSc. All the config
+## should be done above. 
+if ($ENV{HOSTNAME} STREQUAL cluster62)
+   set(PETSC_DIR ${PUB}/petsc-3.2-p7)
+   set(PETSC_ARCH linux-gnu-O)
+   set(PETSC_INCLUDES ${PETSC_DIR}/include ${PETSC_DIR}/${PETSC_ARCH}/include)
+elseif ($ENV{HOSTNAME} STREQUAL wilbur)
+   set(PETSC_DIR $ENV{HOME}/PETSC/petsc-3.2-p7)
+   set(PETSC_ARCH linux-gnu-O)
+   set(PETSC_INCLUDES ${PETSC_DIR}/include ${PETSC_DIR}/${PETSC_ARCH}/include)
+elseif ($ENV{HOSTNAME} STREQUAL urubu)
+   set(PETSC_DIR ${PUB}/petsc-3.2-p7)
+   set(PETSC_ARCH linux-gnu-O)
+   set(PETSC_INCLUDES ${PETSC_DIR}/include ${PETSC_DIR}/${PETSC_ARCH}/include)
+elseif ($ENV{HOSTNAME} STREQUAL seshat)
+   set(PETSC_DIR $ENV{HOME}/PETSC/petsc-3.2-p7)
+   set(PETSC_ARCH linux-gnu-O)
+   set(PETSC_INCLUDES ${PETSC_DIR}/include ${PETSC_DIR}/${PETSC_ARCH}/include)
+else()
+   find_package(PETSc REQUIRED)
+endif()
+if($ENV{HOSTNAME} STREQUAL cluster62)
+  find_package(Eigen3 CONFIG REQUIRED)
+elseif($ENV{HOSTNAME} STREQUAL seshat)
+  find_package(Eigen3 CONFIG REQUIRED)
+elseif($ENV{HOSTNAME} STREQUAL coyote)
+## find_package(Eigen3 CONFIG REQUIRED)
+else()
+  find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+  pkg_check_modules(JSONCPP REQUIRED jsoncpp)
+endif()
+set(EXTRA_LIBS -lgomp)
+
+## find_package(HDF5 COMPONENTS C CXX Fortran)
+find_library(HDF5_LIBRARY hdf5 HINTS ${HDF5_ROOT}/lib64 ${HDF5_ROOT}/lib)
+get_filename_component(HDF5_LIB_DIR ${HDF5_LIBRARY} DIRECTORY)
+message("HDF5_ROOT ${HDF5_ROOT}")
+message("HDF5_LIBRARIES ${HDF5_LIBRARIES}")
+message("HDF5_C_LIBRARIES ${HDF5_C_LIBRARIES}")
+message("HDF5_CXX_LIBRARIES ${HDF5_CXX_LIBRARIES}")
+message("HDF5_INCLUDE_DIRS ${HDF5_INCLUDE_DIRS}")
+message("HDF5_LIBRARY ${HDF5_LIBRARY}")
+message("HDF5_LIB_DIR ${HDF5_LIB_DIR}")
+
+set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/../userfunsopt)
+
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib;${HDF5_LIB_DIR}/lib;${CS_ROOT}/lib;${PETSC_ROOT}/lib)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -DHAVE_CONFIG_H ${CXXOPTFLAGS}")
+
+add_library(userfuns csuserfuns.cpp zrenorm2.cpp daesolve.cpp
+  nwsolve.cpp getjaco.cpp prtclsys.cpp checkprobes.cpp
+  rigid.cpp stdsurftrac.cpp utils.cpp mmove.cpp mmovepar.cpp
+  mindist.cpp prtclsys2.cpp itsolv.cpp)
+
+set(CSLIBS -L${CS_ROOT}/lib saturne ple)
+## set(H5LIBS -L${HDF5_ROOT}/lib hdf5 hdf5_cpp)
+
+if(${CMAKE_VERSION} VERSION_GREATER "2.8.12")
+include(gitversion/cmake.cmake)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHAVE_GITVERSION")
+endif()
+
+message("PETSC_INCLUDES ${PETSC_INCLUDES}")
+include_directories(
+  BEFORE
+  ${CS_ROOT}/include
+  ${CS_ROOT}/include/code_saturne
+  ${MPI_INCLUDE_PATH}
+  ${JSONCPP_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
+  ${PFPCKGDIR}/include
+  ${HDF5_INCLUDE_DIRS}
+  ${PETSC_INCLUDES}
+  ${FMT_ROOT}/include)
+
+install(TARGETS userfuns DESTINATION lib)
+install(FILES csuserfuns.hpp vecmacros.hpp DESTINATION include)

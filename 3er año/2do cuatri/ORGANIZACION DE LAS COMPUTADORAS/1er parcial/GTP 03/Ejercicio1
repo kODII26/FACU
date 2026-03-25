@@ -1,0 +1,26 @@
+.data 
+valor1: 10
+valor2: 20
+
+.text
+.globl main
+
+main:
+#push
+	lw a0, valor1 # Cargo valor 1
+	addi sp, sp, -4 #Reservo lugar en la pila
+	sw a0, 0(sp) # Agrego el registro a la pila
+	
+	lw a1, valor2
+	addi sp, sp, -4
+	sw a1, 0(sp)
+	
+	# pop
+	lw a0, 0(sp) # Cargo en a0 el valor actual de la pila
+	addi sp, sp, 4 # Lo elimino
+	
+	lw a1, 0(sp)
+	addi sp, sp, 4
+	ret
+	
+	

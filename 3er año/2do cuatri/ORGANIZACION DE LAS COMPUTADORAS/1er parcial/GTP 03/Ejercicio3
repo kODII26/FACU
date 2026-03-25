@@ -1,0 +1,31 @@
+.data
+ array: .word 3, 7, 2, 9, 5, 1
+ length: .word 6
+ result: .word 0
+ 
+.text
+# Completa la función suma_array
+.globl main
+main:
+	
+	la t0, array
+	la t1, length
+	lw a1, 0(t1)
+	
+	li t2,0 # suma
+	li t3,0 #  contador i
+	
+
+loop:
+
+	beq  t3, a1, done        # while (i < n)
+    slli t4, t3, 2          # t4 = i*4
+    add  t5, t0, t4         # t5 = &array[i]
+    lw   t6, 0(t5)          # t6 = array[i]
+    add  t2, t2, t6         # suma += array[i]
+    addi t3, t3, 1          # i++
+    j loop
+    
+done:
+	la t0,result 
+	sw t2,0(t0)

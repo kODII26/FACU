@@ -1,0 +1,8 @@
+materia=Programacion Orientada a Objetos
+carrera=Ingeniería en Informática
+facultad=asd asd
+universidad=Universidad Nacional del Litoral
+nro_unida=5
+nombre_unidad=Flujos de entrada/salida
+otro_campo=otro_valor
+otro_campo_mas=otro_valor_mas

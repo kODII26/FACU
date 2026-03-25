@@ -1,0 +1,20 @@
+# Suma los elementos de un arreglo
+.text
+.globl main
+main:
+	la t0, array
+	addi t1,x0,0 #li t1, 0 # i = 0
+	addi a0,x0,0 #li a0, 0 # sum = 0
+	addi t2,x0,1000 #li t2, 1000 # length
+loop:
+ 	bge t1, t2, end
+ 		 #slli t3, t1, 2
+ 		 #add t4, t0, t3
+ 	lw t5, 0(t4)
+ 	add a0, a0, t5
+ 	addi t0,t0,4
+ 	addi t1, t1, 1
+ 	j loop
+end:
+	ret
+

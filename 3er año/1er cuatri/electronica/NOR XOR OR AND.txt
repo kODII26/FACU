@@ -1,0 +1,22 @@
+XOR = 1 cuando son distintas las entradas, son iguales 0 (simbolo + encerrado)
+AND = 1 cuando todas son 1
+NOR = 1 cuando las dos son 0, 0 eoc
+
+OR = SUMA
+AND = MULTIPLICACION
+
+
+NAND = Negacion Multiplicacion
+NOR = Negacion de la suma
+XOR = Suma pero cuando los dos valen 1, es 0
+NXOR = XOR NEGADO
+
+LOGICAS:
+ NOT 
+ AND 
+ OR 
+ XOR
+
+
+XNOR: E1E3+E1complementoE3complemento = (E1 XOR E3)complemento 
+tamb se puede expresar como E1 puntito encerrado E3

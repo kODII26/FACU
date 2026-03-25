@@ -1,0 +1,30 @@
+.data
+ texto: .asciz "Hola Mundo RISC-V"
+ 
+ 
+.text
+.globl a_mayusculas
+# Modificar el string directamente en memoria
+a_mayusculas:
+	la t0, texto
+	
+	
+	addi t2,x0,97
+	addi t3,x0,122
+	
+loop:
+	lb t1, 0(t0)
+	beq t1,x0,fin
+	blt t1,t2,skip
+	bgt t1,t3,skip
+	
+	# convertir 
+	addi t1,t1,-32
+	sb t1,0(t0)
+
+skip:
+	addi t0,t0,1
+	j loop
+	
+fin:
+	ret

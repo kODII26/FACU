@@ -1,0 +1,10 @@
+addi t0,zero,-42
+
+blt t0,zero,neg # si t0<0 , saltar a neg
+add t1,t0,zero # caso positivo, t1=t0(no cambio nada)
+j fin  #Salta al final para no ejecutra el caso negativo (porque estamos en el caso positivo)
+
+neg:
+	sub t1,zero,t0 # 0-(-42)=42
+
+fin:

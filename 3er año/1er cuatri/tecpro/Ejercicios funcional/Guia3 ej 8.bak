@@ -1,0 +1,6 @@
+(newline)(display "EJERCICIO 8: ")(newline); EJERCICIO 20
+
+(define (lambda r) (* (* r r) pi))
+
+(lambda 3)
+(lambda 4)

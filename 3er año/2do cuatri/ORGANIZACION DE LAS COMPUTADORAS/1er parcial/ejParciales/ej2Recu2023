@@ -1,0 +1,49 @@
+.data 
+size: .word 20
+v: .word 345, 457, 45, 67, 456, 2425, 5876, 354, 12, 23, 400, 677, 44, 2344, 1123, 56, 333, 112, 556, 444
+
+.text
+.globl main
+main:
+	la t0,size
+	lw a0,0(t0)
+	li t1,0x10010000
+	
+	li t2,0 # contador i
+	addi a1,a0,-1 # Limite del primer fori (n-1)
+	
+	j fore
+
+fore: 
+	bge t2,a1,fin 
+	sub a2,a1,t2 # Limite del for interno (n-1)-i
+	li t3,0 # contador j 
+	j fori
+	
+fori:
+	bge t3,a2,siguiente
+	
+	slli t4,t3,2 # j * 4, 
+	add t6,t1,t4 #aca obtengo la direccion
+	
+	lw a3,0(t6) # a3 = v[j]
+	lw a4,4(t6) # a4 = v[j+1]
+	 
+	ble a3,a4,no_swap
+	#swap
+	sw a4,0(t6)
+	sw a3,4(t6)
+	
+	addi t3,t3,1
+	j fori
+		
+no_swap:
+	addi t3,t3,1
+	j fori		
+		
+siguiente:
+	addi t2,t2,1
+	j fore
+	
+fin:
+	ecall

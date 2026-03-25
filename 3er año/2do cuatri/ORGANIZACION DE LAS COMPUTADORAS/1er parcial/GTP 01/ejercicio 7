@@ -1,0 +1,11 @@
+addi t0,zero,21
+addi t1,zero,0 #t1= contador =0
+
+loop:
+andi t2,t0,1 # t2= t0 & 1 , extrae el ult bit de t0 y lo compara con 1 (0001) , guarda en t2 si es cero o uno
+add t1,t1,t2 # sumo el t2 en el contador
+srli t0,t0,1 # guarda en t0 el t0 corrido 1 bit a la derecha para seguir comparando el LSB
+bne t0,zero,loop # repite hasta que t0 sea igual a cero
+	
+	
+	

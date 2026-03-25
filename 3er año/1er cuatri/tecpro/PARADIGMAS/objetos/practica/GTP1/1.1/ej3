@@ -1,0 +1,10 @@
+import math
+numero = float(input("Introduce un número (negativo para terminar): "))
+
+# En un bucle, verifica si el número es negativo; si lo es, termina el bucle
+while(numero>0):
+    print(math.sqrt(numero))
+    numero = float(input("Introduce un número (negativo para terminar): "))
+# Calcula la raíz cuadrada del número
+
+# Imprime la raíz cuadrada

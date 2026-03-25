@@ -1,0 +1,20 @@
+.data 
+valorCelsius: .word 0
+valorFahren: .word 0
+
+.text
+.globl main
+main:
+
+	la t0,valorCelsius
+	lw a0,0(t0)
+	
+celsius_a_fah:
+	li t1,9
+	li t3,5
+	mul t2,a0,t1
+	div t4,t2,t3
+	addi t5,t4,32
+	
+	la t6,valorFahren
+	sw t5,0(t6)

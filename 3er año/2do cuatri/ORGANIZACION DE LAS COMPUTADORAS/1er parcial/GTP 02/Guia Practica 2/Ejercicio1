@@ -1,0 +1,38 @@
+.data
+numero1: .word 8
+numero2: .word 5
+resultadoSuma: .word 0
+resultadoResta: .word 0
+resultadoMultiplicacion: .word 0
+resultadoDivision: .word 0
+
+
+.text
+main:
+	la x5, numero1
+	lw x6, 0(x5)
+	la x7, numero2
+	lw x8, 0(x7)
+	
+	add x9, x6, x8
+	la x14, resultadoSuma
+	sw x9, 0(x14)
+	
+	sub x10, x6, x8
+	la x15, resultadoResta
+	sw x10, 0(x15)
+	
+	add x11, x11, zero   # sumador
+	add x12, x12, zero   # contador
+	multiplica:
+		add x11, x11, x6
+		addi x12, x12, 1
+		blt x12, x8, multiplica
+	la x16, resultadoMultiplicacion
+	sw x11, 0(x16)
+	
+	div x13, x6, x8
+	la x17, resultadoDivision
+	sw x13, 0(x17)
+	
+	

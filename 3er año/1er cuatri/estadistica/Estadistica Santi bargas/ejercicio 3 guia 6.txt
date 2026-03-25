@@ -1,0 +1,10 @@
+u = 10 millones / seg
+o(sigma) 0,8 millones / seg
+n= cuantos segundos ? INCOGNITA N
+Prob(   ) = 0.95
+
+numero medio difera en 0,3... valor medio
+
+x(media con el signo arriba) - u = 0.3
+
+P(x(media)-u <= 0.3) = 0.95

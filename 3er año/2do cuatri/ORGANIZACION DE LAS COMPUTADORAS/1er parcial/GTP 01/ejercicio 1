@@ -1,0 +1,6 @@
+addi t0,zero,5
+addi t1,zero,7
+add t0,t0,t1
+
+#¿Cuantos ciclos de reloj en total le toma al procesador para cargar el numero al registro?
+# Para la primer opreacion demora 5 ciclos , luego cada operacion demora 1 solo ciclo

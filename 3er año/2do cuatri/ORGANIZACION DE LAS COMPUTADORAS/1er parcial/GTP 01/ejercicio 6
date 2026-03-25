@@ -1,0 +1,11 @@
+addi t0,zero,8
+addi t1,zero,12
+
+blt t0,t1,else # if (t0<t1) -> salto al else
+add t2,t0,zero # sumo t0 ya que estamos en el caso de que t0 es mayor a t1
+j fin
+
+else:
+add t2,t1,zero #sumo t1 ya que es el mayor de los 2
+
+fin:

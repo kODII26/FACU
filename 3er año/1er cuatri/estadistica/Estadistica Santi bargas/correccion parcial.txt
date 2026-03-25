@@ -1,0 +1,95 @@
+Modelo de poisson:
+ Si el número de pruebas n se incrementa y la 
+probabilidad del evento de interés p se hace 
+pequeña, es deicr n-> inf y p-> 0 el modelo binomial da a lugar al modelo Poisson
+donde lambda = n*p
+
+TEOREMA DE BAYES:
+Utilizando el teorema de Bayes podemos mejorar los valores de las probabilidades 
+relacionadas a la ocurrencia de un suceso, basándonos en nueva información
+Esto es cierto siempre y cuando el espacio muestral sea exhaustivo y excluyente. 
+Excluyente: no puedan ocurrir simultáneamente,
+Exhaustivo: los sucesos abarcan todo el espacio muestral
+
+Una vez comprobado que es exhaustivo y excluyente podemos conocer 
+la probabilidad de A a partir de un nuevo suceso B, es decir, nueva información.
+
+El teorema de Bayes se expresa matemáticamente de la siguiente manera:
+P(A|B) = (P(B n A)) / P(B)
+
+Donde:
+P(A|B) es la probabilidad de que ocurra el evento A dado que ha ocurrido el evento B.
+P(B|A) es la probabilidad de que ocurra el evento B dado que ha ocurrido el evento A.
+P(A) es la probabilidad inicial de que ocurra el evento A.
+P(B) es la probabilidad de que ocurra el evento B.
+
+Para comenzar en esta grafica vemos la primer recta Ymedia, que es el valor medio
+Luego vemos la linea recta representada por Ysombrero = a + bx que es la ecuacion de regresion lineal,
+es decir la recta estimada. Donde la ecuación de regresión lineal es una
+herramienta estadística utilizada para modelar la relación entre una variable 
+dependiente y una o más variables independientes.
+Podemos ver como las observaciones (puntos negros en el grafico) se dispersan 
+en el plano xy
+
+ En la ecuacion de regresion lineal:
+la y  representa la variable dependiente que queremos predecir. 
+x es la variable independiente o predictora.
+ b: los coeficientes de regresión que representan el cambio esperado en y cuando x cambia de unidad
+a : es el término de intersección o el valor esperado de y cuando  la/las variables independientes son cero.
+El objetivo de la regresión lineal es encontrar los mejores coeficientes de regresión que minimicen 
+la suma de los errores cuadrados entre las observaciones reales y 
+las predicciones realizadas por el modelo.
+
+
+
+Tambien podemos hablar de r^2 que es el coeficiente de regresion lineal donde
+r^2= Suma de cuadrados explicados / suma de cuadrados total
+Suma de cuadrados explicados = SCE 
+Suma de cuadrados total = SCT = Sumatoria (Yi - Ymedia)^2
+Sabemos que  r^2 varía entre 0 y 1, ya que SCE es menor o igual que SCT. 
+Podemos decir que:
+ SCE = 0,  -> SCR = SCT -> r^2 = 1. Esto significa que todos los puntos están sobre la recta estimada. 
+Si SCR = 0 -> SCE = SCT -> r^2 = 0. Esto significa que la pendiente de la recta es igual a cero. 
+Esto puede deberse a que la línea de regresión sea horizontal. 
+Y también esto podría ser debido a que las observaciones se dispersan 
+alrededor del valor medio en forma aleatoria o que las observaciones 
+se dispersan alrededor de una curva donde la línea mejor ajustada es una línea
+ recta horizontal,o tambien,todas las observaciones tienen el mismo valor, 
+cualquiera sea el valor de x
+
+N MUESTRA GRANDE VENTAJAS: Mayor representacion de los datos, mayor precision en en analisis
+A medida que el tamaño de la muestra aumenta, el margen de error de las estimaciones se reduce
+
+N MUESTRA GRANDE DESVENTAJAS: Costo y tiempo, Dificultad para gestionar y controlar
+
+
+La desventaja del enfoque subjetivo de la probabilidad es que cada persona 
+puede asignar diferentes probabilidades a un mismo evento, 
+ya que se basa en creencias y juicios individuales. 
+Esto dificulta la comparación y el consenso entre diferentes personas. 
+La probabilidad proporciona una medida objetiva basada en observaciones empíricas.
+Los tomadores de decisiones pueden hacer uso de cualquier evidencia que tengan a mano y 
+mezclarlas con los sentimientos personales sobre la situación. 
+
+u3=tercer momento respecto a la media
+uk= E[X-E(X)]^k
+
+Estadistico: Buen parametro cuando n-> inf, el estadistico converge al valor del parametro
+El estimador debe volverse cada vez más cercano al valor real del parámetro.
+
+Tambien el estadístico debe tener una varianza baja, lo que significa que debe
+proporcionar estimaciones precisas del parámetro. Por ejemplo en el caso que 
+se quiera elegir entre dos estimadores, se prefiere aquel con menor varianza, 
+ya que tiende a ser más preciso.
+
+Tambien cuando su intervalo de confianza es "menor", es decir mientras 
+mas pequeño sea su intervalo de confianza, mejor sera el estimador
+
+media        xlinea   u
+varianza       s^2   o^2   indica la variabilidad de los datos, que tan dispersos estan de su valor promedio
+desvio estandar  s    o    raíz cuadrada positiva de la varianza
+covarianza    s_xy   o_xy
+correlacion   r_xy   p_xy
+
+r = coeficiente de correlación determina la relación estadística entre dos variables
+r^2 = coeficiente de determinacion, explica la variabilidad explicada por el modelo

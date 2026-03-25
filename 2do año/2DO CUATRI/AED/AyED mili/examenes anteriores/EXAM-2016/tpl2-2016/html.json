@@ -1,0 +1,420 @@
+[
+ {
+  "datain": {
+   "tree": "(html (body (div (ul (li a)) img a) (table td (td a) td)))"
+  },
+  "output": {
+   "tree": "(html (body (div (ul (li (strong a))) img (strong a)) (table td (td (strong a)) td)))"
+  },
+  "ucase": 0
+ },
+ {
+  "datain": {
+   "tree": "(html (body (div (ul (li (strong a))) img a) (table td (td (strong a)) td)))"
+  },
+  "output": {
+   "tree": "(html (body (div (ul (li (strong a))) img (strong a)) (table td (td (strong a)) td)))"
+  },
+  "ucase": 1
+ },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (h1 (ol (span (div ul) (ul a a) (strong a) (strong a)) (ul strong (ol img ul span strong) (table a))) div span) ul (span (ol (img (strong a) (strong a))))))"
+      },
+      "output": {
+         "tree": "(html (body (h1 (ol (span (div ul) (ul (strong a) (strong a)) (strong a) (strong a)) (ul strong (ol img ul span strong) (table (strong a)))) div span) ul (span (ol (img (strong a) (strong a))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul table (ul ul (ul ol (strong a) (strong a)) (img (span a strong div) (img ul ul) (table table span a table) (strong h1)) (strong (ol h1) (strong a))) (h1 (div (ul h1 a) (h1 ol) (strong h1 div h1 ul)) (span (strong a))) (ul (ol (table ul) (img a) (strong a) (strong a)) (ul (img a a a ul) (span ul h1) (strong a)))) strong (ul strong (div (div (span ol strong) (div strong a h1 span)) (span ol (ul a a)) (strong (img a a ol span) (div a a ol) (strong table a ol) (span a a)) (span (ul a div table ol) (strong a) (strong a))) img)))"
+      },
+      "output": {
+         "tree": "(html (body (ul table (ul ul (ul ol (strong a) (strong a)) (img (span (strong a) strong div) (img ul ul) (table table span (strong a) table) (strong h1)) (strong (ol h1) (strong a))) (h1 (div (ul h1 (strong a)) (h1 ol) (strong h1 div h1 ul)) (span (strong a))) (ul (ol (table ul) (img (strong a)) (strong a) (strong a)) (ul (img (strong a) (strong a) (strong a) ul) (span ul h1) (strong a)))) strong (ul strong (div (div (span ol strong) (div strong (strong a) h1 span)) (span ol (ul (strong a) (strong a))) (strong (img (strong a) (strong a) ol span) (div (strong a) (strong a) ol) (strong table a ol) (span (strong a) (strong a))) (span (ul (strong a) div table ol) (strong a) (strong a))) img)))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body div (strong (img (h1 h1 table (strong a h1) (table h1 div strong)) (ol (strong a) ol (strong a) table) (img (img h1 strong div) (strong a) (ol ol ol))) (ol (h1 (strong a) (h1 div ul strong) span) (h1 (img span span) (strong img a) (table a a div a) (img h1 strong table a)) (ul (span a strong) (strong a))) (span table (ol (strong a) (table h1)) (span ul))) div span))"
+      },
+      "output": {
+         "tree": "(html (body div (strong (img (h1 h1 table (strong a h1) (table h1 div strong)) (ol (strong a) ol (strong a) table) (img (img h1 strong div) (strong a) (ol ol ol))) (ol (h1 (strong a) (h1 div ul strong) span) (h1 (img span span) (strong img a) (table (strong a) (strong a) div (strong a)) (img h1 strong table (strong a))) (ul (span (strong a) strong) (strong a))) (span table (ol (strong a) (table h1)) (span ul))) div span))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body table (div (table span (div (ul a img a div)) (span h1) (div (strong a)))) (span (ul (table (strong a) h1 (img a h1 a)) (div (div a) (table a) (span a) (span div)) (ul (strong a)) (h1 (strong a) (h1 a img ol table) (h1 img))) (table (ol (img table div) (ul ol a) (strong a a span)) (table (ol table h1)) (strong (div a a h1) (ul a strong) (strong ul a img) (table img a div)) (table (h1 a) (strong ul ul h1) (strong a) h1)))))"
+      },
+      "output": {
+         "tree": "(html (body table (div (table span (div (ul (strong a) img (strong a) div)) (span h1) (div (strong a)))) (span (ul (table (strong a) h1 (img (strong a) h1 (strong a))) (div (div (strong a)) (table (strong a)) (span (strong a)) (span div)) (ul (strong a)) (h1 (strong a) (h1 (strong a) img ol table) (h1 img))) (table (ol (img table div) (ul ol (strong a)) (strong a a span)) (table (ol table h1)) (strong (div (strong a) (strong a) h1) (ul (strong a) strong) (strong ul a img) (table img (strong a) div)) (table (h1 (strong a)) (strong ul ul h1) (strong a) h1)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (h1 (span (table (img a ol))) (img (ol (strong a)) (strong (img a img a strong) div)) (ol (div (table table div) (img a span) (strong table ul a span) (strong a)) (h1 (div a span a) (ul img span div) (img a ul)) (h1 (span a img a))) (ol (ul (img a span img) table) ol (div table)))))"
+      },
+      "output": {
+         "tree": "(html (body (h1 (span (table (img (strong a) ol))) (img (ol (strong a)) (strong (img (strong a) img (strong a) strong) div)) (ol (div (table table div) (img (strong a) span) (strong table ul a span) (strong a)) (h1 (div (strong a) span (strong a)) (ul img span div) (img (strong a) ul)) (h1 (span (strong a) img (strong a)))) (ol (ul (img (strong a) span img) table) ol (div table)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul ol (strong a) (table a ol div)) div div (img (strong a) (strong div) (strong a) (span span a span))))"
+      },
+      "output": {
+         "tree": "(html (body (ul ol (strong a) (table (strong a) ol div)) div div (img (strong a) (strong div) (strong a) (span span (strong a) span))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (h1 (span a span div img) (ol a table a table)) (ul (div strong div) (strong a) (img h1 strong table))))"
+      },
+      "output": {
+         "tree": "(html (body (h1 (span (strong a) span div img) (ol (strong a) table (strong a) table)) (ul (div strong div) (strong a) (img h1 strong table))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (table (ol a) (span ul)) ul (span (h1 div a table table) (img a img a strong) (strong a) (ul img h1 img))))"
+      },
+      "output": {
+         "tree": "(html (body (table (ol (strong a)) (span ul)) ul (span (h1 div (strong a) table table) (img (strong a) img (strong a) strong) (strong a) (ul img h1 img))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (div (h1 img (h1 (strong a) (span ul) (table table h1))) img (ul (span (strong a) (ul h1 table span div) (h1 a a)) (h1 (img a strong ol) ol (ul a a ul)) (span (strong a) (ul h1 div)) h1) (ol (ol div (strong a) (img a strong h1 a) (strong a)) (img (h1 strong span img div)) (ul (strong a) (strong a)) (div (strong a) (ol img img) (strong a)))) (table (ol h1 (ul (strong a)))) (ul (table (img (strong a) (ul div) img (strong a)) (table strong ul) (img div (strong h1 a img a) img (strong a)) (table table (div a) table (div ul h1 ul))))))"
+      },
+      "output": {
+         "tree": "(html (body (div (h1 img (h1 (strong a) (span ul) (table table h1))) img (ul (span (strong a) (ul h1 table span div) (h1 (strong a) (strong a))) (h1 (img (strong a) strong ol) ol (ul (strong a) (strong a) ul)) (span (strong a) (ul h1 div)) h1) (ol (ol div (strong a) (img (strong a) strong h1 (strong a)) (strong a)) (img (h1 strong span img div)) (ul (strong a) (strong a)) (div (strong a) (ol img img) (strong a)))) (table (ol h1 (ul (strong a)))) (ul (table (img (strong a) (ul div) img (strong a)) (table strong ul) (img div (strong h1 a img a) img (strong a)) (table table (div (strong a)) table (div ul h1 ul))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (strong (span ol) ul (span strong ol table span) (div a span a div)) img))"
+      },
+      "output": {
+         "tree": "(html (body (strong (span ol) ul (span strong ol table span) (div (strong a) span (strong a) div)) img))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (span (span (h1 (strong h1) (span table ul) (div a)) (table (span table h1 strong a) (div a span ol) (span img) (strong a)) (ol (h1 ul div div) (strong a) div) (h1 (ol img table))) (ul span (ul (strong a)) ul) (img (span (strong a)) (div (strong table)) (ol ol (strong a) (h1 table a a a) (div div)) (img (span strong table h1))) (div (div (strong a) (strong a) (ul a table ol h1)) (div (ol table h1 strong) (table div img img) (ul a ol) (h1 img a span)) span div)) (img (ul span) (span (div (ol ol strong ul) (span h1 h1 span) (img span a a a)) (strong (strong a) (strong a) (table a a)) (ul (strong a) (div h1 h1 a)))) (span (span (ul (strong a) (strong a))) (strong (ol (span span a) (ul span) (table ul strong a img))) (ul (img (ol ul a span) ol (ul strong h1 a) (ul h1 ol strong a))))))"
+      },
+      "output": {
+         "tree": "(html (body (span (span (h1 (strong h1) (span table ul) (div (strong a))) (table (span table h1 strong (strong a)) (div (strong a) span ol) (span img) (strong a)) (ol (h1 ul div div) (strong a) div) (h1 (ol img table))) (ul span (ul (strong a)) ul) (img (span (strong a)) (div (strong table)) (ol ol (strong a) (h1 table (strong a) (strong a) (strong a)) (div div)) (img (span strong table h1))) (div (div (strong a) (strong a) (ul (strong a) table ol h1)) (div (ol table h1 strong) (table div img img) (ul (strong a) ol) (h1 img (strong a) span)) span div)) (img (ul span) (span (div (ol ol strong ul) (span h1 h1 span) (img span (strong a) (strong a) (strong a))) (strong (strong a) (strong a) (table (strong a) (strong a))) (ul (strong a) (div h1 h1 (strong a))))) (span (span (ul (strong a) (strong a))) (strong (ol (span span (strong a)) (ul span) (table ul strong (strong a) img))) (ul (img (ol ul (strong a) span) ol (ul strong h1 (strong a)) (ul h1 ol strong (strong a)))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body span))"
+      },
+      "output": {
+         "tree": "(html (body span))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul div)))"
+      },
+      "output": {
+         "tree": "(html (body (ul div)))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body h1 (h1 span (strong a) (div span div) (strong a)) (ol ol (table a ul h1) (strong a) (span a table ol div))))"
+      },
+      "output": {
+         "tree": "(html (body h1 (h1 span (strong a) (div span div) (strong a)) (ol ol (table (strong a) ul h1) (strong a) (span (strong a) table ol div))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul (span (ol (ol a strong) (div ul span)) (ul (strong a) (strong a)) (table div (strong a) (div ul)))) (ol (strong (table (table a table) (strong a) ol)) (strong (span div (ol a ul) (h1 a))) (div (ol (strong a)) (img span (div table ol table) (strong a) (strong a)))) (h1 (img h1)) span))"
+      },
+      "output": {
+         "tree": "(html (body (ul (span (ol (ol (strong a) strong) (div ul span)) (ul (strong a) (strong a)) (table div (strong a) (div ul)))) (ol (strong (table (table (strong a) table) (strong a) ol)) (strong (span div (ol (strong a) ul) (h1 (strong a)))) (div (ol (strong a)) (img span (div table ol table) (strong a) (strong a)))) (h1 (img h1)) span))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (div (strong a)) (ul (strong a) (strong a) (strong a) (table table)) (div (strong h1 table) (div h1) (strong a))))"
+      },
+      "output": {
+         "tree": "(html (body (div (strong a)) (ul (strong a) (strong a) (strong a) (table table)) (div (strong h1 table) (div h1) (strong a))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul (strong a) (strong a) img (img a a)) (table (ul ol a ol ol) (h1 h1 table div table)) (strong (strong a) (strong a) (strong img table a table) (strong a)) img))"
+      },
+      "output": {
+         "tree": "(html (body (ul (strong a) (strong a) img (img (strong a) (strong a))) (table (ul ol (strong a) ol ol) (h1 h1 table div table)) (strong (strong a) (strong a) (strong img table a table) (strong a)) img))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (img (ol (h1 div) (ol (div span a a strong) (span table) (strong a) (strong a))))))"
+      },
+      "output": {
+         "tree": "(html (body (img (ol (h1 div) (ol (div span (strong a) (strong a) strong) (span table) (strong a) (strong a))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (div (strong (div a ol h1 a))) (span (ul img (strong table span h1 a) (img img div)) (img (ul img a table h1) (strong a)))))"
+      },
+      "output": {
+         "tree": "(html (body (div (strong (div (strong a) ol h1 (strong a)))) (span (ul img (strong table span h1 a) (img img div)) (img (ul img (strong a) table h1) (strong a)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ol (table ul) (strong a img h1 div) (strong a ul ul) (strong div strong table)) (h1 (table div table span strong) (ol a) (table a ul ul a) (ol ul a span)) (ul (strong a) (div a span div))))"
+      },
+      "output": {
+         "tree": "(html (body (ol (table ul) (strong a img h1 div) (strong a ul ul) (strong div strong table)) (h1 (table div table span strong) (ol (strong a)) (table (strong a) ul ul (strong a)) (ol ul (strong a) span)) (ul (strong a) (div (strong a) span div))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (span (strong (ol span h1 a)) div (h1 (ul a span a a) (span div span)))))"
+      },
+      "output": {
+         "tree": "(html (body (span (strong (ol span h1 (strong a))) div (h1 (ul (strong a) span (strong a) (strong a)) (span div span)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ol div)))"
+      },
+      "output": {
+         "tree": "(html (body (ol div)))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body h1 (strong span)))"
+      },
+      "output": {
+         "tree": "(html (body h1 (strong span)))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul table (h1 a a a) (strong a)) div (h1 img div (table strong))))"
+      },
+      "output": {
+         "tree": "(html (body (ul table (h1 (strong a) (strong a) (strong a)) (strong a)) div (h1 img div (table strong))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (table (ol (ol img (ul a span div a)) h1) (img h1)) (table strong (ol (ul (span a a a)) (h1 (strong a) (strong a) (strong a) (strong a)) h1) (img (ul (h1 a div) (ul table ul div))))))"
+      },
+      "output": {
+         "tree": "(html (body (table (ol (ol img (ul (strong a) span div (strong a))) h1) (img h1)) (table strong (ol (ul (span (strong a) (strong a) (strong a))) (h1 (strong a) (strong a) (strong a) (strong a)) h1) (img (ul (h1 (strong a) div) (ul table ul div))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body ol))"
+      },
+      "output": {
+         "tree": "(html (body ol))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body div))"
+      },
+      "output": {
+         "tree": "(html (body div))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul (ol (ul (ul table) (img a) (h1 a) (strong a)) strong (img h1))) (img (strong (span (strong a)) (strong (strong a) (span img span) (table table strong)) (strong (strong a) span (div div div strong a)) (table (div strong ul h1) h1 (strong a) (h1 span table)))) (span (img h1 span (h1 (ul ul) (div img ol h1) (strong a)) (img (strong a) (ol table ol) (strong a) (ol a div img h1))) (ul (table (h1 a a) (img a div a a) (ul table) (ul span ol h1 a)) (ul (ul table ul a) (strong a) (strong a) span) (div (ul div ul span div) (strong a) (h1 a) (strong a)) (table (strong a) table)) (ol (ol (ol ol) (strong a) (h1 a div a) (strong a)) ul))))"
+      },
+      "output": {
+         "tree": "(html (body (ul (ol (ul (ul table) (img (strong a)) (h1 (strong a)) (strong a)) strong (img h1))) (img (strong (span (strong a)) (strong (strong a) (span img span) (table table strong)) (strong (strong a) span (div div div strong (strong a))) (table (div strong ul h1) h1 (strong a) (h1 span table)))) (span (img h1 span (h1 (ul ul) (div img ol h1) (strong a)) (img (strong a) (ol table ol) (strong a) (ol (strong a) div img h1))) (ul (table (h1 (strong a) (strong a)) (img (strong a) div (strong a) (strong a)) (ul table) (ul span ol h1 (strong a))) (ul (ul table ul (strong a)) (strong a) (strong a) span) (div (ul div ul span div) (strong a) (h1 (strong a)) (strong a)) (table (strong a) table)) (ol (ol (ol ol) (strong a) (h1 (strong a) div (strong a)) (strong a)) ul))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (img (div (div span table) (strong strong))) (div (ol (strong span a strong ul) div))))"
+      },
+      "output": {
+         "tree": "(html (body (img (div (div span table) (strong strong))) (div (ol (strong span a strong ul) div))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (strong h1 (ol (h1 (strong a) (h1 ol a ol)) (h1 (h1 a))))))"
+      },
+      "output": {
+         "tree": "(html (body (strong h1 (ol (h1 (strong a) (h1 ol (strong a) ol)) (h1 (h1 (strong a)))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (strong (strong a) (strong a) (h1 ol strong span span) (strong a)) div (div (strong a)) (span (strong a))))"
+      },
+      "output": {
+         "tree": "(html (body (strong (strong a) (strong a) (h1 ol strong span span) (strong a)) div (div (strong a)) (span (strong a))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ul (div a h1 a)) (ul (strong div a) strong div) (div (ul ol ol table) (strong a) (strong a) (strong a)) (ol h1 (table a a) div (strong a))))"
+      },
+      "output": {
+         "tree": "(html (body (ul (div (strong a) h1 (strong a))) (ul (strong div a) strong div) (div (ul ol ol table) (strong a) (strong a) (strong a)) (ol h1 (table (strong a) (strong a)) div (strong a))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (strong (img h1 (div img a a span) (img div))) (ol (h1 (table div a ul)) (strong (ol a)))))"
+      },
+      "output": {
+         "tree": "(html (body (strong (img h1 (div img (strong a) (strong a) span) (img div))) (ol (h1 (table div (strong a) ul)) (strong (ol (strong a))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (h1 table (div (strong (table a) (table a a div ol)) (h1 (h1 h1 a img a)) (table (ol div a table)))) (img (h1 (img (ul a) (table a ul a)) (span (h1 div a) (span a) (ol span h1 table ul))) (img (img (strong a) (span a)) (div (img div a a) ul) (table (strong a) (img div a h1))) (ol strong (ul (table ul ol) table) (ul (span ul span) (div table table) (ul a a) img)))))"
+      },
+      "output": {
+         "tree": "(html (body (h1 table (div (strong (table (strong a)) (table (strong a) (strong a) div ol)) (h1 (h1 h1 (strong a) img (strong a))) (table (ol div (strong a) table)))) (img (h1 (img (ul (strong a)) (table (strong a) ul (strong a))) (span (h1 div (strong a)) (span (strong a)) (ol span h1 table ul))) (img (img (strong a) (span (strong a))) (div (img div (strong a) (strong a)) ul) (table (strong a) (img div (strong a) h1))) (ol strong (ul (table ul ol) table) (ul (span ul span) (div table table) (ul (strong a) (strong a)) img)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ol (span ol (strong a) (strong a img) strong) (div (span a h1 table a) (ol img table a span) (strong a))) (img (h1 (strong strong div h1) h1 img (h1 a a)) ul (div (ul div)) span) (table (table (strong a)) (strong (strong a) (table a table ul) (strong a) (ul table)) (span (strong a) (strong a)))))"
+      },
+      "output": {
+         "tree": "(html (body (ol (span ol (strong a) (strong a img) strong) (div (span (strong a) h1 table (strong a)) (ol img table (strong a) span) (strong a))) (img (h1 (strong strong div h1) h1 img (h1 (strong a) (strong a))) ul (div (ul div)) span) (table (table (strong a)) (strong (strong a) (table (strong a) table ul) (strong a) (ul table)) (span (strong a) (strong a)))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (h1 (table (table span a a ul) (ol ol a div ol) (table a ul a)) (img h1 table h1) (strong (strong a) ol)) (img strong (table (h1 div h1)) (span (strong a)) (ol (strong a) (table a) div (table strong))) (table (table (strong div table table img) img (h1 ul) ul)) (ul (table (span ol ol ol) (img h1) (table a table ol h1)) ul (strong h1 div (h1 ol span strong)) (ol div (strong a) (h1 table table h1 a) (h1 a a h1 a)))))"
+      },
+      "output": {
+         "tree": "(html (body (h1 (table (table span (strong a) (strong a) ul) (ol ol (strong a) div ol) (table (strong a) ul (strong a))) (img h1 table h1) (strong (strong a) ol)) (img strong (table (h1 div h1)) (span (strong a)) (ol (strong a) (table (strong a)) div (table strong))) (table (table (strong div table table img) img (h1 ul) ul)) (ul (table (span ol ol ol) (img h1) (table (strong a) table ol h1)) ul (strong h1 div (h1 ol span strong)) (ol div (strong a) (h1 table table h1 (strong a)) (h1 (strong a) (strong a) h1 (strong a))))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html body)"
+      },
+      "output": {
+         "tree": "(html body)"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (ol (img (span (strong a) strong (strong a)) (h1 (table a h1 ul) strong) (img (strong h1 table) strong (ul img)))) (span (h1 (table (strong a) img) (strong (strong ul strong) span (img a ol) (ol h1)) div img) (span (ul (div a a)) (ul (ul img span div)) (ol (strong h1 img))) (table (ol (h1 table h1 a) (strong a) (ul a ol ul) (strong a)) (strong (strong h1) (strong a) (ul ul)) (span (div div span)) (h1 (ol h1 a) span))) (ol (img div (strong (table table) (ul a ul a) span (ol ul)) (img (strong a) (strong a) (strong a) (strong a))) (h1 (span (div ol)) (div (strong a) div) (img (strong a)) (div table (strong a) (ol strong h1 img) (h1 span ul a a)))) (ol table)))"
+      },
+      "output": {
+         "tree": "(html (body (ol (img (span (strong a) strong (strong a)) (h1 (table (strong a) h1 ul) strong) (img (strong h1 table) strong (ul img)))) (span (h1 (table (strong a) img) (strong (strong ul strong) span (img (strong a) ol) (ol h1)) div img) (span (ul (div (strong a) (strong a))) (ul (ul img span div)) (ol (strong h1 img))) (table (ol (h1 table h1 (strong a)) (strong a) (ul (strong a) ol ul) (strong a)) (strong (strong h1) (strong a) (ul ul)) (span (div div span)) (h1 (ol h1 (strong a)) span))) (ol (img div (strong (table table) (ul (strong a) ul (strong a)) span (ol ul)) (img (strong a) (strong a) (strong a) (strong a))) (h1 (span (div ol)) (div (strong a) div) (img (strong a)) (div table (strong a) (ol strong h1 img) (h1 span ul (strong a) (strong a))))) (ol table)))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body (img (strong a) (div ul) (strong a) table) ul (h1 (strong a) (span ul) (strong a))))"
+      },
+      "output": {
+         "tree": "(html (body (img (strong a) (div ul) (strong a) table) ul (h1 (strong a) (span ul) (strong a))))"
+      }
+   },
+   {
+      "datain": {
+         "tree": "(html (body img (table strong)))"
+      },
+      "output": {
+         "tree": "(html (body img (table strong)))"
+      }
+   }
+]

@@ -1,0 +1,12 @@
+# Comprobar si es par o impar usando AND con 1
+andi x5, x11, 1 # x5 = x11 & 1
+
+Compara el ult bit de x11, si el and con 1 (0001) da 1, entonces en x5 te queda 1
+y es impar x11, si el ult bit es cero, el and dara 0 y es par el x11
+
+OPTIMIZADO:
+andi t5,t1,1 #extrae el ultimo bit
+bne  t5, x0, contar  # si impar, sumar
+
+
+PRIMO

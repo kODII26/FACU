@@ -1,0 +1,25 @@
+.data
+array: .word 3, 5, 7, 9, 11   # array de 5 enteros
+sum:   .word 0                # para guardar la suma
+
+.text
+.globl main
+main:
+    li   t0, 0        # acumulador suma = 0
+    li   t2, 0        # i = 0
+    la   t1, array    # t1 = dirección base del array
+    li   t3, 5
+loop:
+    bge  t2, t3, done  # si i >= 5, salir del bucle
+    slli t4, t2, 2    # t4 = i * 4 (desplazamiento en bytes)
+    add  t5, t1, t4   # t5 = &array[i]
+    lw   t6, 0(t5)    # t3 = array[i]
+    add  t0, t0, t6   # suma += array[i]
+    addi t2, t2, 1    # i++
+    j    loop
+
+done:
+    la   t6, sum
+    sw   t0, 0(t6)      # guardar la suma en memoria
+halt:
+    j halt

@@ -1,0 +1,7 @@
+addi t0,zero,6
+
+#si el lsb es cero, es par
+#si el lsb es uno, es impar 
+
+andi t2,t0,1 #extrae el ultimo bit
+xori t1,t2,1 #t1=1 si par, 0 si impar

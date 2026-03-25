@@ -1,0 +1,9 @@
+addi t0,zero,4
+addi t1,zero,3
+addi t2,zero,0
+addi t3,zero,0 #contador i
+
+loop:
+	add t2,t2,t0
+	addi t3,t3,1 # i++
+	blt t3,t1,loop # si i<3 -> repetir

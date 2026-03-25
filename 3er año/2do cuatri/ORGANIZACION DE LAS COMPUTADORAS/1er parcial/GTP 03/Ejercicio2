@@ -1,0 +1,40 @@
+.data 
+	fact: .word 5
+	result: .word 0
+
+.text
+.globl main
+main:
+	la t0,fact
+	lw a0, 0(t0)
+	jal factorial     # llamada a factorial(n)
+    
+    # guardar resultado en memoria para poder verlo en el Data segment
+    la t0, result
+    sw a0, 0(t0)
+
+    # fin del programa (depende del simulador)
+    ebreak
+
+# a0 = n  -->  a0 = n!
+factorial:
+    addi sp, sp, -8
+    sw   ra, 4(sp)       # guardar retorno
+    sw   a0, 0(sp)       # guardar n
+
+    beq  a0, x0, .base   # if n==0 -> 1
+    addi a0, a0, -1
+    jal  ra, factorial   # a0 = factorial(n-1)
+
+    lw   t0, 0(sp)       # t0 = n (original)
+    mul  a0, a0, t0      # a0 = (n-1)! * n
+    j    .done
+
+.base:
+    li   a0, 1
+
+.done:
+    lw   ra, 4(sp)
+    addi sp, sp, 8
+    ret
+	

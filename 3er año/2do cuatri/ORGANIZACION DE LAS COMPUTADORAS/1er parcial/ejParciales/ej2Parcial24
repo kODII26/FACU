@@ -1,0 +1,59 @@
+.data
+empleados: .word 15
+sMax: .word 0x001B7635
+sueldos: .word 12,12,12,12
+hijos: .word 1,2,3,4
+mayor1: .word 0
+mayor2: .word 0
+
+.text
+.globl main
+main:
+    la t0, empleados
+    lw t1, 0(t0)
+    la t2, sueldos
+
+    la t3, mayor1
+    lw a0, 0(t3) # mayor1
+    la t4, mayor2
+    lw a1, 0(t4) # mayor2
+
+    li a3, 0 # contador
+
+loop:
+    bge a3, t1, fin
+
+    lw a4, 0(t2) # sueldo empleado actual
+
+    bge a4, a0, esmayor1
+    bge a4, a1, esmayor2
+
+    addi a3, a3, 1
+    addi t2, t2, 4
+
+    j loop
+
+siguiente:
+    addi a3, a3, 1
+    addi t2, t2, 4
+
+    j loop
+
+
+esmayor1:
+    add a1, a0, zero
+    add a0, a4, zero
+
+    j siguiente
+
+esmayor2:
+    add a1, a4, zero
+
+    j siguiente
+
+fin:
+    sw a0, 0(t3)
+    sw a1, 0(t4)
+
+    ori a7,x0,10
+    ecall

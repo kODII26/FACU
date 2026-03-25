@@ -1,0 +1,36 @@
+.data
+ array: .word 3, 7, 2, 9, 5, 1
+ length: .word 6
+ maximo: .word 0
+ 
+.text
+# Completa la función encontrar_max
+.globl main
+main:
+
+	la t0,array
+	la t1,length
+	lw a0,0(t0)
+	lw a1,0(t1)
+	
+	
+	lw t2,0(t0)  # maximo = primer elementro del array
+	li t3,1  #  contador i=1 
+	
+encontrar_max:
+	beq  t3, a1, done        # while (i < n)
+    slli t4, t3, 2          # t4 = i*4
+    add  t5, t0, t4         # t5 = &array[i]
+    lw   t6, 0(t5)          # t6 = array[i]
+    addi t3, t3, 1          # i++
+    bge t6,t2,max		#Si t6>t2, tengo q actualizar el maximo
+    j encontrar_max
+    
+max:
+	mv t2,t6
+	j encontrar_max
+
+done:
+	la t1, maximo
+	sw t2, 0(t1)
+	

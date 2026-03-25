@@ -1,0 +1,5 @@
+(let ([a 1][b 2])
+ (let ([c (/ (* 7 a) b)] [d (/ (* 3 a) b)])
+  (+ c c d)))
+(let ([l (list 'a 'b 'c)])
+  (cons (car l) (cdr l)))

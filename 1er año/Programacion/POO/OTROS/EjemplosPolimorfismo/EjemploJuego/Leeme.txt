@@ -1,0 +1,50 @@
+
+ Super Ejemplo Integrador de la Unidad 3: El Jueeego
+=====================================================
+
+
+Reglas básicas:
+ - El juego comienza con N personajes, cada uno con una cantidad inicial de vida 
+   y de maná.
+ - En cada turno, se eligen dos personajes al azar, y uno ataca al otro, quitándole 
+   un punto de vida.
+ - El juego termina cuando queda uno solo vivo, que será el ganador.
+
+Se modela inicialmente con dos clases: 
+ - Juego: gestiona las reglas del juego... inicializa el estado y los personajes, 
+          dice qué pasa en cada turno/ronda, cuando terminó etc... y ofrece además
+		  algunos métodos adicionales para poder consultar el estado del juego e
+		  informarlo desde afuera (desde el main o sus funciones auxiliares)
+ - Personaje: guarda el estado de un personaje y realiza algunas acciones mínimas
+              sobre el mismo por pedido de la clase Juego
+
+El main es muy simple y abstracto... delega toda la lógica del juego a la clase 
+Juego, y la interfaz de usuario a dos o tres funciones auxiliares.
+
+Luego se agregan las reglas:
+ - Hay tres tipos de personajes: arqueros, caballeros y magos.
+ - El maná de cada personaje se regenera con el paso del tiempo.
+ - Cada personaje, en su turno, puede consumir una cierta cantidad de maná 
+   para realizar un ataque especial según su tipo.
+	- El arquero puede efectuar un disparo con su flecha envenada que quita 3 
+	  puntos de vida. Esta acción consume 3 unidades de maná.
+	- El caballero puede utilizar su espada para quitarle la mitad de su energía 
+	  al enemigo en un solo movimiento, consumiendo para ello 8 unidades de maná.
+    - El mago puede absorver la unidad de energía que le quita a su enemigo, 
+	  consumiendo en esta acción 5 unidades de maná.
+	  
+Esto se modela con polimorfismo. Se hacen virtuales algunos métodos de la clase 
+Personaje, luego se generan herencias para cada tipo en particular y allí se
+implementa la lógica del ataque especial, o cualquier otra variación que dependa 
+del tipo.
+
+Más tarde, se agregaron más personajes para mostrar otras posibles variaciones
+a las reglas y lo fácil (rápido) que es probar nuevos elementos del juego sobre 
+este diseño de clases. 
+
+
+
+Video de la clase (03/09/2019) en: https://youtu.be/J3woyHpRRfM
+
+Versión alternativa (19/09/2017) en: https://youtu.be/66r_jedfM4U
+

@@ -1,0 +1,3 @@
+Lopez Javier        10 10 Desaprobado
+Garcia Ana        90 70 Aprobado
+Farias Daniel        60 62 Aprobado

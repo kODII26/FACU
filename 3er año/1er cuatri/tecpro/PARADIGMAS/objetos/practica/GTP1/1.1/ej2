@@ -1,0 +1,13 @@
+segundos = int(input("Introduce el número de segundos: "))
+horas=0
+minutos=0
+
+# Convierte los segundos a horas, minutos y segundos
+while(segundos>3600):
+    horas+=1
+    segundos-=3600
+while(segundos>60):
+    minutos+=1
+    segundos-=60
+# Imprime el resultado en formato de horas, minutos y segundos
+print(horas, "horas", minutos, "minutos", segundos, "segundos")

@@ -1,0 +1,6 @@
+addi t0,zero,10
+addi t1,zero,20
+
+xor t0,t0,t1 # A XOR B = 30
+xor t1,t0,t1 # (A XOR B) XOR B = A = 10
+xor t0,t0,t1 # (A XOR B) XOR A = B = 20

@@ -1,0 +1,20 @@
+
+Estudiamos estadistica porque hay incertidumbre, para eso nos sirve
+Modelamos la incertidumbre con la probabilidad
+
+Si son mutuamente excluyentes, son dependientes
+
+Si A,B son mutuamentes excluyentes -> P(A interseccion B) = 0
+
+a la F(x) MAYUSCULA NO le puedo hacer una integral
+
+
+Las 3 de arriba representan la funcion de densidad lo que estaria en color celeste, la verde una funcion de densidad marginal de una 
+de las variables, lo bordo la funcion de densidad de otra de las variables
+
+Las 3 de abajo representan la funcion acumulativa lo que estaria en color celeste, la verde una funcion acumulativa de una de las marginales
+lo bordo la funcion acumulativa de otra de las marginales
+
+La esperanza es el valor que representa a todos los valores
+
+Para aplicar bayes tiene que ser exahustivo y excluyente

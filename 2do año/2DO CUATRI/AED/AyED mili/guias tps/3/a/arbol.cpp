@@ -1,0 +1,2 @@
+#include <iostream>#include <tree.hpp>#include <graphviz.hpp>#include <lisp.hpp>#include <list>using namespace aed;using namespace std;template<typename T>void show_list(const list<T> &L){	cout << "[ ";	for_each(L.begin(),L.end(),[](T v){cout << v << " ";});	cout << "] \n";}		int main()	{					string s_arbol("(1 2 (3 6 (7 11 12))(4 8) (5 9 (13 10))");		tree<int> arbol;					if (lisp2tree(s_arbol,arbol)) tree2dot(arbol);		else cout << "Error en crear arbol a partir de notacion de lisp \n";						return 0;	}
+	

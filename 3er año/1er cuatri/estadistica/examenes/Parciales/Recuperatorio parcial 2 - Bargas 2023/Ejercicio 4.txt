@@ -1,0 +1,29 @@
+Lo que podemos observar en esta imagen es un diagrama de tallo y hoja.
+Su objetivo es mostrar la frecuencia con la que ocurren los valores dentro de un conjunto
+de datos. Podemos decir que es parecido al histograma pero en este diagrama no observamos
+barras solidas, si no que los numeros son los mismos numeros los que forman el diagrama.
+
+Combina la visualizacion de un histograma con la informacion de una distribucion de frecuencias
+
+Este diagrama se construye colocando en una columna todos los números que 
+conforman los datos eliminando la última cifra, es decir las unidades.
+Se ordena de mayor a menor como podemos ver en este ejemplo del 6 al 14
+
+A la derecha de cada número se escribe la última cifra o unidad de 
+cada dato que comienza con ese número.
+
+Cada valor se subdivide en tres componentes:
+el más significativo (situado mas a la derecha) se usa para formar el tallo
+el segundo forma la hoja (puede servir para generar un histograma)
+el tercero (menos significativo) se puede despreciar.
+
+Podemos simplificar el grafico, eliminando las filas sin hojas e indicando los
+valores altos como ALTOS si son considerados elevados o BAJOS si son considerados bajos
+
+Esta forma de representacion grafica es recomendable para variables cuantitativas
+debido a su sencillez a la hora de armarlo.
+
+Por ultimo podemos mencionar las caracteristicas que nos permite visualizar un diagrama de este tipo:
+1: Muestra el rango de valores de los datos
+2: Determina donde se concentra la mayoria de los datos (en el 9 en este ejemplo)
+3:Describen la simetria

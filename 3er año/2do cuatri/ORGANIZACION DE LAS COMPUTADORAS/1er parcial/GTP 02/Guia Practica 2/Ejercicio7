@@ -1,0 +1,21 @@
+.data
+numero: .word 5
+resultado: .word 0 # si es 0, el numero es igual a 0, si es 1 es mayor, si es 2 es menor
+
+.text
+.globl main
+main: 
+	la t0, numero
+	lw s0, 0(t0)
+	
+	la s1, resultado
+	blt s0, zero, guardarneg # si es menor que cero guardo en s1
+	slt t0, zero, s0 # si es mayor a cero, se guarda 1 en t0
+	sw t0, 0(s1) # guardo el 1 en resultado
+	
+guardarneg:
+	li t0, 2
+	sw t0, 0(s1) # guardo 2 en resultado si es menor a 0
+	
+	
+	

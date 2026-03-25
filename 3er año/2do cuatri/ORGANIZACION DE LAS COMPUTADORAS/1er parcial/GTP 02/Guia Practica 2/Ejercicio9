@@ -1,0 +1,21 @@
+.data
+factorial: .word 5
+factorialResultado: .word 0
+
+.text
+.globl main
+
+main: 
+	la t0, factorial
+	lw a0, 0(t0)
+	
+	li t0, 1  #sum
+  	li t1, 1 # i = 1
+  	
+ loop:
+ 	mul t0, t0, t1
+ 	addi t1, t1, 1
+ 	blt t1, a0, loop
+ 
+ la a1, factorialResultado
+ sw t0, 0(a1)

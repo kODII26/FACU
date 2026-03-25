@@ -1,0 +1,15 @@
+Parcial 1 2017 Hecho
+Parcial 1 2018
+Parcial 1 2019 Hecho
+Parcial 1 2023 Hecho
+Parcial 1 2023 Recuperatorio hecho (implementar nand en verilog)
+Parcial 1 2024  Hecho 
+Parcial 1 2024 Recuperatorio 3_b VERILOG (implementar nand en verilog)
+
+
+Parcial 2 2018
+Parcial 2 2023 falta el 3
+Parcial 2 2023 REMIX HECHO
+Parcial 2 2023 recuperatorio HECHO
+Parcial 2 2024 HECHO
+Parcial 2 2024 recuperatorio HECHO

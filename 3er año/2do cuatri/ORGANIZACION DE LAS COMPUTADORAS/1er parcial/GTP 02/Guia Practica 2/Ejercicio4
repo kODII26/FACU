@@ -1,0 +1,22 @@
+.data
+numero: .word 5
+
+.text
+.globl main
+main:
+
+	la t0, numero
+	lw s0, 0(t0)
+	li t1, 0 # contaodr
+	li t2, 1 # restador
+	
+
+while:
+	sub s0, s0, t2
+	addi t1, t1, 1
+	blt zero, s0, while
+
+halt:
+	j halt
+	
+	

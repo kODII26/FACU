@@ -1,0 +1,309 @@
+$date
+	Fri Jun 20 12:55:05 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module TFI_tb $end
+$var wire 4 ! leds [3:0] $end
+$var reg 1 " botonA $end
+$var reg 1 # botonB $end
+$var reg 1 $ clk $end
+$var reg 1 % reset $end
+$scope module uut $end
+$var wire 1 " botonA $end
+$var wire 1 # botonB $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 & salida $end
+$var wire 4 ' leds [3:0] $end
+$var wire 7 ( espacio [6:0] $end
+$var wire 1 ) entrada $end
+$var wire 1 * botonB_estable $end
+$var wire 1 + botonA_estable $end
+$scope module contador_instancia $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 & salida $end
+$var wire 1 ) entrada $end
+$var reg 7 , espacio [6:0] $end
+$upscope $end
+$scope module detector_instancia $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 * botonB $end
+$var wire 1 + botonA $end
+$var parameter 2 - S0 $end
+$var parameter 2 . S1 $end
+$var parameter 2 / S2 $end
+$var parameter 2 0 S3 $end
+$var reg 1 ) entrada $end
+$var reg 2 1 nextstate [1:0] $end
+$var reg 1 & salida $end
+$var reg 2 2 state [1:0] $end
+$upscope $end
+$scope module leds_inst $end
+$var wire 7 3 espacio [6:0] $end
+$var wire 4 4 leds [3:0] $end
+$upscope $end
+$scope module sensores_instacia $end
+$var wire 1 " botonA $end
+$var wire 1 # botonB $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 * botonB_estable $end
+$var wire 1 + botonA_estable $end
+$scope module antirebA $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 " senal_entrada $end
+$var reg 20 5 contador [19:0] $end
+$var reg 1 + salida_limpia $end
+$var reg 1 6 salida_reg $end
+$upscope $end
+$scope module antirebB $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 1 # senal_entrada $end
+$var reg 20 7 contador [19:0] $end
+$var reg 1 * salida_limpia $end
+$var reg 1 8 salida_reg $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 0
+b11 /
+b10 .
+b0 -
+$end
+#0
+$dumpvars
+08
+b0 7
+06
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 ,
+0+
+0*
+0)
+b0 (
+b0 '
+0&
+1%
+0$
+0#
+0"
+b0 !
+$end
+#10000
+1$
+#20000
+0$
+0%
+#30000
+b1 5
+b1 7
+1$
+#40000
+0$
+#50000
+b10 7
+b10 5
+1$
+#60000
+0$
+#70000
+16
+b0 5
+b11 7
+1$
+1"
+#80000
+0$
+#90000
+b100 7
+b1 5
+1$
+#100000
+0$
+#110000
+b10 5
+b101 7
+1$
+#120000
+0$
+1#
+#130000
+18
+b0 7
+b11 5
+1$
+#140000
+0$
+#150000
+b100 5
+b1 7
+1$
+#160000
+0$
+#170000
+b10 7
+06
+b0 5
+1$
+0"
+#180000
+0$
+#190000
+b1 5
+b11 7
+1$
+#200000
+0$
+#210000
+b100 7
+b10 5
+1$
+#220000
+0$
+0#
+#230000
+b11 5
+08
+b0 7
+1$
+#240000
+0$
+#250000
+b1 7
+b100 5
+1$
+#260000
+0$
+#270000
+b101 5
+b10 7
+1$
+#280000
+0$
+#290000
+b11 7
+b110 5
+1$
+#300000
+0$
+#310000
+b111 5
+b100 7
+1$
+#320000
+0$
+#330000
+b101 7
+b1000 5
+1$
+#340000
+0$
+#350000
+b1001 5
+b110 7
+1$
+#360000
+0$
+#370000
+18
+b0 7
+b1010 5
+1$
+1#
+#380000
+0$
+#390000
+b1011 5
+b1 7
+1$
+#400000
+0$
+#410000
+b10 7
+b1100 5
+1$
+#420000
+0$
+1"
+#430000
+16
+b0 5
+b11 7
+1$
+#440000
+0$
+#450000
+b100 7
+b1 5
+1$
+#460000
+0$
+#470000
+b10 5
+08
+b0 7
+1$
+0#
+#480000
+0$
+#490000
+b1 7
+b11 5
+1$
+#500000
+0$
+#510000
+b100 5
+b10 7
+1$
+#520000
+0$
+0"
+#530000
+b11 7
+06
+b0 5
+1$
+#540000
+0$
+#550000
+b1 5
+b100 7
+1$
+#560000
+0$
+#570000
+b101 7
+b10 5
+1$
+#580000
+0$
+#590000
+b11 5
+b110 7
+1$
+#600000
+0$
+#610000
+b111 7
+b100 5
+1$
+#620000
+0$

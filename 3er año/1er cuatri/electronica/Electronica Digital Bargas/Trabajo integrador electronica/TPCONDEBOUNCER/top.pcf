@@ -1,0 +1,70 @@
+# -----------------------------------------------------------------------------
+#- EDU-CIAA-FPGA constraint file (.pcf)
+#  Author : Juan Gonzalez Gomez (Obijuan)
+#- Sep - 2020
+#- GPL license
+#- Repo: https://gitlab.com/educiaafpga
+#- Pinout: https://github.com/ciaa/Hardware/blob/master/PCB/EDU-FPGA/Pinout/Pinout%20EDU%20FPGA.pdf
+
+
+# ADDITIONAL NOTES:
+# This file contains the complete pinout description for the EDU-CIAA-FPGA board.
+# It is used in the iCEstudio development software (https://icestudio.io/),
+# but can also be applied in HDL-level designs, to avoid writing an ad-hoc .pcf descriptor.
+# In order to do so, use the Pinout file to identify the names of the IO pins for your designs
+# and keep those names when building the top level entity or module. 
+#
+# For example, if your top level hierarchy uses the clock, the 4 buttons and the 4 LEDs
+# you can write them as follows, and you should not need a custom .pcf
+#
+# VERILOG :
+# module top (
+#   input  wire CLK ;
+#   input  wire BTN1;
+#   input  wire BTN2;
+#   input  wire BTN3;
+#   input  wire BTN4;
+#   output wire LED0;
+#   output wire LED1;
+#   output wire LED2;
+#   output wire LED3;
+#);
+#
+# VHDL :
+# entity top is 
+#   port(
+#       CLK  : in  std_logic;
+#       BTN1 : in  std_logic;
+#       BTN2 : in  std_logic;
+#       BTN3 : in  std_logic;
+#       BTN4 : in  std_logic;
+#       LED0 : out std_logic;
+#       LED1 : out std_logic;
+#       LED2 : out std_logic;
+#       LED3 : out std_logic;
+#   ); port
+# end entity top;
+#
+# Enjoy !
+# Ramiro A. Ghignone
+
+# -----------------------------------------------------------------------------
+
+#------ User LEDs
+set_io --warn-no-port LED[3] 4  #-- output
+set_io --warn-no-port LED[2] 3  #-- output
+set_io --warn-no-port LED[1] 2  #-- output
+set_io --warn-no-port LED[0] 1  #-- output
+
+
+# ------------ User push buttons ----------------------------------------------
+set_io --warn-no-port xBTN[0] 31  # input
+set_io --warn-no-port xBTN[1] 32  # input
+set_io --warn-no-port xBTN[2] 33  # input
+set_io --warn-no-port xBTN[3] 34  # input
+
+
+# -------------------------- SYSTEM CLOCK -------------------------------------
+set_io --warn-no-port clk 94  # 
+# ------------ Reset ---------------
+set_io --warn-no-port rst 37  # input

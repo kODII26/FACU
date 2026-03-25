@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int division_entera (int a, int b) {
+	int division;
+	division = (a/b);
+	return division;
+}
+int main() {
+	int a, b ;
+	cin>>a>>b;
+	cout<<division_entera(a,b)<<endl;
+	return 0;
+}
+

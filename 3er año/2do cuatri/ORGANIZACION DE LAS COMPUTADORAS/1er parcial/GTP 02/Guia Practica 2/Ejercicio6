@@ -1,0 +1,14 @@
+.data
+maximo: .word 5
+
+.text
+.globl main:
+
+	li t0, zero
+	la t1, maximo
+	lw s0, 0(t1)
+	
+while:
+	addi t0, t0, 1 # suma
+	blt t0, s0, while # si el contador es menor al maximo vuelve al while
+

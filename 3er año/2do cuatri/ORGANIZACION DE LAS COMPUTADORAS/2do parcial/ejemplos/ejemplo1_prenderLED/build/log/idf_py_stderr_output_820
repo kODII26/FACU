@@ -1,0 +1,29 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\justo\Desktop\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DSDKCONFIG='c:\Users\justo\Desktop\FACU\3er año\2do cuatri\ORGANIZACION DE LAS COMPUTADORAS\2do parcial\ejemplos\ejemplo1_prenderApagarLED\sdkconfig' -DCCACHE_ENABLE=1 C:\Users\justo\Desktop\FACU\3er año\2do cuatri\ORGANIZACION DE LAS COMPUTADORAS\2do parcial\ejemplos\ejemplo1_prenderApagarLED
+CMake Warning in C:/Users/justo/Desktop/Espressif/frameworks/esp-idf-v5.5.1/components/mbedtls/mbedtls/library/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/justo/Desktop/FACU/3er año/2do cuatri/ORGANIZACION DE LAS COMPUTADORAS/2do parcial/ejemplos/ejemplo1_prenderApagarLED/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/mbedcrypto.dir/./
+
+  has 194 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    49b0ffc9e6255457e613a686778053ad/esp_crypto_shared_gdma.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+CMake Warning in C:/Users/justo/Desktop/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader_support/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/justo/Desktop/FACU/3er año/2do cuatri/ORGANIZACION DE LAS COMPUTADORAS/2do parcial/ejemplos/ejemplo1_prenderApagarLED/build/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/./
+
+  has 203 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    bootloader_flash/src/bootloader_flash_config_esp32c3.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+

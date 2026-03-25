@@ -1,0 +1,3 @@
+u4)Los Objetos que tengan const, solo pueden utilizar métodos que también lo tengan.
+u6)Dentro de los métodos write y read de fstream, NO se deben utilizar variables dinámicas.
+u3)warning: invalid new-expresion of abstract class type 'NombreDeLaClase'. <-(aparece cuando las funciones virtuales puras no se encuentran en las clases hijas).

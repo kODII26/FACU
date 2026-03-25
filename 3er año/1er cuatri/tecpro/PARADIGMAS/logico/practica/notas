@@ -1,0 +1,82 @@
+## caso recursivo sin importar tamaño de cadena ################################################
+muchomasgrande(A,B):-masgrande(A,B). <- Primera regla(regla de parada)
+muchomasgrande(A,B):-masgrande(A,X),muchomasgrande(X,B). <-2da regla(recursiva)
+
+## las reglas sirven para proponer nuevas relaciones ################################################
+padrede(martin,luis).
+padrede(luis,jose).
+padrede(luis,pedro).
+espadre(martin).
+espadre(luis).   
+
+hijode(B,A):-padrede(A,B). <- regla que define la relacion hijo de
+abuelode(A,C):-padrede(A,B),padrede(B,C). <- regla que define la relacion abuelo de
+familiarde(A,B):-padrede(A,B);hijode(A,B);abuelode(A,B). <- regla disyuncion, ; = OR 
+
+## consulta si algo es miembro de algo mas grande ################################################
+menu(M), member('Dulce de batata',M).
+# otra manera
+menu([_,_,'Dulce de batata']).
+
+## IS ################################################
+Funcionamiento de is:
+Evaluación de la expresión:
+
+La expresión a la derecha de is (en este caso, N - 1) se evalúa.
+Prolog calcula el resultado de la operación aritmética.
+Asignación del resultado:
+
+El resultado de la evaluación se asigna a la variable a la izquierda de is (en este caso, N1).
+
+is requiere que las variables en la expresión a la derecha estén instanciadas.
+
+## funcionamiento prolog  ################################################
+1-Primera llamada: Cuando llamas a factorial(N, Factorial) con un valor de N, Prolog intenta satisfacer la regla:
+factorial(N, Factorial):- 
+    N >= 0, 
+    N1 is N - 1, 
+    factorial(N1, F1), 
+    Factorial is N * F1.
+En este punto, F1 no tiene un valor asignado todavía. Prolog procede a evaluar la llamada recursiva factorial(N1, F1).
+
+2-Recursión: La llamada recursiva factorial(N1, F1) se ejecuta con N1 (que es N - 1). Prolog sigue llamando al predicado hasta llegar al caso base:
+factorial(0, 1).
+En el caso base, Prolog asigna el valor 1 al segundo argumento (Factorial), que corresponde a F1 en la llamada anterior.
+
+3-Retorno: Una vez que el caso base se resuelve, Prolog comienza a retornar los valores hacia las llamadas anteriores. En cada paso:
+    F1 toma el valor del factorial calculado en el paso anterior.
+    Factorial se calcula como N * F1.
+
+
+## caso particular ##############################
+insertar(Num, [Cabeza|Resto], [Num, Cabeza|Resto]):- 
+    Num =< Cabeza.
+inserta Num antes del resto de la lista por eso va antes de cabeza|resto
+
+## chequear es lista ################
+is_list(X).
+\+  is_list(X).  #true si no es lista
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
