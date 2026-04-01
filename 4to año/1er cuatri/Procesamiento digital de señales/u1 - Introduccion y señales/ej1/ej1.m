@@ -1,33 +1,4 @@
-1; #le decimos al interprete que el archivo es un script y no una funcion
 
-function [y, t] = generar_senoidal(fs, fm, phi, t_inicial, t_final)
-    t = t_inicial : 1/fm : t_final; # crea vector con inicio, aumento,fin
-
-    y = sin(2 * pi * fs * t + phi);
-end
-
-function [y,t] = generar_sinc(fs, fm, t_inicial, t_final)
-  t = t_inicial : 1/fm : t_final;
-
-  x = 2 * pi * fs * t;
-
-  y = ones(size(x));
-
-  # Indices donde x NO es 0
-  indices = find(x!=0);
-
-  y(indices) = sin(x(indices)) ./ x(indices);
-endfunction
-
-function [y, t] = generar_cuadrada(fs, fm, phi, t_inicial, t_final)
-    t = t_inicial : 1/fm : t_final;
-
-    argumento_mod = mod(2 * pi * fs * t + phi, 2 * pi);
-
-    y = ones(size(t));
-
-    y(argumento_mod >= pi) = -1;
-endfunction
 
 fm = 100;           % Frecuencia de muestreo en Hz
 t_inicial = 0;      % Tiempo inicial en segundos
