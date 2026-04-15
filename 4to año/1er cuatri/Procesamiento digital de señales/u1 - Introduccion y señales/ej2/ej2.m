@@ -1,7 +1,7 @@
 #Inversión → cambia el signo
 #Rectificación → elimina parte negativa
 #Cuantización → discretiza la amplitud (la hace “escalonada”)
-
+addpath('../Funciones creadas');
 
 fm = 1000;  % Frecuencia de muestreo fija por consigna
 tini = -1;
