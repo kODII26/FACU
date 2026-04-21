@@ -1,4 +1,5 @@
-function [x,it,r_h]=jacobi(A,b,x0,maxit,tol)
+function [x,it,r_h,t]=jacobi(A,b,x0,maxit,tol)
+  tic;
   n=length(b);it=0;r_h=[];x=x0;
   while (it<maxit)
     it+=1;
@@ -12,6 +13,8 @@ function [x,it,r_h]=jacobi(A,b,x0,maxit,tol)
     endif
     x0=x;
   endwhile
+  t= toc;
   if it==maxit
-    disp(’Se ha llegado al Nro maximo de iteraciones’)
-endif
+    disp('Se ha llegado al Nro maximo de iteraciones')
+  endif
+end

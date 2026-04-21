@@ -1,5 +1,6 @@
-function [x,it,r_h]=gauss_seidel(A,b,x0,maxit,tol)
+function [x,it,r_h,t]=gauss_seidel(A,b,x0,maxit,tol)
   n=length(b);it=0;r_h=[];x=x0;
+  tic;
   while (it<maxit)
     it+=1;
       for i=1:n
@@ -15,6 +16,7 @@ function [x,it,r_h]=gauss_seidel(A,b,x0,maxit,tol)
     endif
     x0=x;
   endwhile
+  t=toc;
   if it==maxit
-  disp(’Se ha llegado al Nro maximo de iteraciones’)
+  disp('Se ha llegado al Nro maximo de iteraciones')
 endif
