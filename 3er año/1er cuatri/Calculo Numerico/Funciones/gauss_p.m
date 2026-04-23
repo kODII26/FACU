@@ -9,7 +9,7 @@ function [x,r] = gauss_p(A,b)
     % p: posicion donde se encuentra pmax (local)
     [pmax,p] = max(abs(A(r(k:n),k))); % Mira la coluumna k de la matriz A pero solo desde las filas k hasta n respetando el orden de r
     if pmax<epsilon
-      disp(’Los posibles pivots son CERO’)
+      disp('Los posibles pivots son CERO')
       break
     endif
     p = p+k-1; %actualizamos pos. a numeracion global
@@ -19,5 +19,5 @@ function [x,r] = gauss_p(A,b)
     A(r(k+1:n),k) = A(r(k+1:n),k)/A(r(k),k);
     A(r(k+1:n),k+1:n+1) = A(r(k+1:n),k+1:n+1) - A(r(k+1:n),k)*A(r(k),k+1:n+1);
     endfor
-  x=sust_atras(A(r,:));
+  x=sust_atras_vec(A(r,:));
 
