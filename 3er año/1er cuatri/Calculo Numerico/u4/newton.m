@@ -12,16 +12,16 @@ function [x, h] = newton(f, df, x0, kmax, tol)
         % === Criterios de parada ===
 
         % 1) Tolerancia en valor absoluto (activar esta línea si quieres usar este criterio)
-        if abs(x1 - x0) < tol
-            x = x1;
-            return;
-        end
-
-        % 2) Tolerancia relativa (activar esta línea si quieres usar este criterio)
-        %if abs(x1 - x0)/abs(x1) < tol
+        %if abs(x1 - x0) < tol
         %    x = x1;
         %    return;
         %end
+
+        % 2) Tolerancia relativa (activar esta línea si quieres usar este criterio)
+        if abs(x1 - x0)/abs(x1) < tol
+            x = x1;
+            return;
+        end
 
         % 3) Tolerancia sobre el valor de f(x) (activar esta línea si quieres usar este criterio)
         %if abs(f(x1)) < tol
