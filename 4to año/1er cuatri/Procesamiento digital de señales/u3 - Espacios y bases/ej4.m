@@ -4,7 +4,7 @@ addpath('../Funciones creadas');
 frecuencias = [1:1:10];
 
 %coeficientes = [1 1 1 1 1 1 1 1 1 1];
-coeficientes = [0.0:0.1:1];  % item a: sin fase
+coeficientes = [0.1:0.1:1];  % item a: sin fase
 fases =        [pi/7, pi*2/7,  pi/4, 3*pi/9, pi/2, pi, pi/3, pi/3.5, pi/6, 2*pi/1.5];  % item b: con fase
 
 %ITEM A ----------------
@@ -41,14 +41,14 @@ ylabel('Grado de parecido')
 
 %ITEM B ----------------
 
-% primero calculás el parecido con cada senoidal con fase
+
 f2 = zeros(1, fm);
 for i = 1:length(frecuencias)
     [y, ~] = generar_senoidal(frecuencias(i), fm, fases(i), tini, tfin);
     f2 = f2 + coeficientes(i) .* y;
 end
 
-
+% primero calculás el parecido con cada senoidal con fase
 parecidos2 = zeros(1, length(frecuencias));
 for i = 1:length(frecuencias)
     [y, ~] = generar_senoidal(frecuencias(i), fm, 0, tini, tfin);
@@ -70,6 +70,9 @@ ylabel('Grado de parecido')
 % pero distinta fase varia como cos(phi), por lo que una componente con mucho peso
 % pero desfasada cerca de pi/2 puede dar un parecido cercano a cero, y una desfasada
 % cerca de pi puede dar un valor negativo
+
+%el producto interno deja de ser una
+%buena medida del peso de una frecuencia cuando aparece fase.
 
 %ITEM C --------------------
 
