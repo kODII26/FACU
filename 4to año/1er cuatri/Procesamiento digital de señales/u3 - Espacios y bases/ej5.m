@@ -1,9 +1,9 @@
 x = load('te.txt');
 fm = 11025;
 
-% -------------------------------
+
 % Ventanas (definidas a mano)
-% -------------------------------
+
 ventanas = [17100 21400;
             29900 34200;
             39600 43200;
@@ -46,21 +46,24 @@ for k = 1:size(ventanas,1)
 
     % tiempo local
     N = length(segmento);
-    t = (0:N-1)'/fm;
-
+    t = (0:N-1)'/fm; %en señales discretas t=n/fm
+    % traspongo porque segmento tambien es columna y luego multiplico ambas
 
     % DETECCIÓN FILA
     magnitud_filas = zeros(1,length(f_filas));
 
     for i = 1:length(f_filas)
         f = f_filas(i);
-
+        %la señal puede venir desfasada por eso se hace seno y coseno
         seno = sin(2*pi*f*t);
         coseno = cos(2*pi*f*t);
 
+        % productos internos
         pi_seno = sum(segmento .* seno);
         pi_cos  = sum(segmento .* coseno);
 
+        %magnitud total (elimina el efecto de la fase)
+        %hay que eliminar la fase porque puede generar un falso negativo
         magnitud_filas(i) = sqrt(pi_seno^2 + pi_cos^2);
     end
 

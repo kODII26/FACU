@@ -7,7 +7,7 @@ f_ref = 5;
 % senal de referencia
 x_ref = sin(2 * pi * f_ref * t);
 
-%Evalue el efecto que producen los distintos par´ametros
+%Evalue el efecto que producen los distintos parametros
 %(A, f, φ) sobre el calculo del producto interno.
 
 % vario la amplitud

@@ -21,6 +21,6 @@ for i = 1:size(seniales, 1)       % iterar filas
     fprintf('  Amplitud: %.4f\n', max(abs(y)));
     fprintf('  Energia:  %.4f\n', sum(y.^2)); % norma 2 al cuadrado
     fprintf('  Accion:   %.4f\n', sum(abs(y))); % norma 1
-    fprintf('  Potencia: %.4f\n', mean(y.^2));
-    fprintf('  RMS:      %.4f\n', sqrt(mean(y.^2)));
+    fprintf('  Potencia: %.4f\n', mean(y.^2)); % media de la señal cuadrado
+    fprintf('  RMS:      %.4f\n', sqrt(mean(y.^2))); % raiz de la potencia
 end

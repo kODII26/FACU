@@ -5,6 +5,7 @@ L = round(t_segmento * fs); %cantidad de muestras por nota
 % referencia para LA (440 Hz)
 n = 0:L-1;
 referencia_LA = sin(2 * pi * 440 * n / fs);
+%en señales discretas t=n/fs
 
 
 for i = 1:8
