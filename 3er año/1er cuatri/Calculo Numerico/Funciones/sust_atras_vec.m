@@ -1,12 +1,11 @@
-function x = sust_atras_vec(A,b)
-  n = length(b);
-  x = zeros(n,1);
-  x(n) = b(n)/A(n,n);
-  for i = n-1:-1:1
-    suma = A(i,i+1:n)*x(i+1:n);
-    x(i) = (b(i)-suma)/A(i,i);
-  endfor
-
+function x = sust_atras_vec(A)
+    n = size(A, 1);
+    x = zeros(n, 1);
+    x(n) = A(n, end) / A(n, n);
+    for i = n-1:-1:1
+        x(i) = (A(i, end) - A(i, i+1:n) * x(i+1:n)) / A(i, i);
+    end
+end
 #A(i,i+1:n) → la parte de la fila 𝑖 a la derecha de la diagonal
 #x(i+1:n) → las incógnitas ya conocidas
 #y hacés directamente el producto matricial

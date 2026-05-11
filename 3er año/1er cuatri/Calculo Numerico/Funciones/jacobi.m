@@ -1,4 +1,4 @@
-function [x,it,r_h,t]=jacobi(A,b,x0,maxit,tol)
+function [x,it,r_h]=jacobi(A,b,x0,maxit,tol)
   n=length(b);it=0;r_h=[];x=x0;
   tic;
   while (it<maxit)
@@ -6,15 +6,26 @@ function [x,it,r_h,t]=jacobi(A,b,x0,maxit,tol)
     for i=1:n
       x(i) = (b(i)-A(i,1:i-1)*x0(1:i-1)-A(i,i+1:n)*x0(i+1:n))/A(i,i);
     endfor
+    % =========================
+    % CRITERIOS DE CORTE
+    % =========================
 
-    err=norm(x-x0,inf)/norm(x,inf);
+    % 1) Error absoluto
+    %err = norm(x-x0,inf);
+
+    % 2) Error relativo
+    err = norm(x-x0,inf)/norm(x,inf);
+
+    % 3) Norma infinita del residuo
+    %err = norm(b-A*x,inf);
+
     r_h=[r_h;err];
     if(err<tol) % podes comparar con err o con r_h(it)
       break;
     endif
     x0=x;
   endwhile
-  t=toc;
+  t=toc
   if it==maxit
     disp('Se ha llegado al Nro maximo de iteraciones')
   endif

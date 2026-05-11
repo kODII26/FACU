@@ -11,5 +11,5 @@ function [x] = gauss1(A,b)
       endfor
     endfor
   endfor
-  x = sust_atras_vec(A(:,1:end-1), A(:,end));
+  x = sust_atras(A(:,1:end-1), A(:,end));
 endfunction

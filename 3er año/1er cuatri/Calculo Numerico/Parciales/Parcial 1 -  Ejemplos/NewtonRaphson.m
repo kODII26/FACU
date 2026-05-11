@@ -1,0 +1,28 @@
+# Metodo de Newton-Raphson
+function [x,rh,it,t] = NewtonRaphson(f,df,x0,kmax,tol)
+
+%f: la función de la cual se desea encontrar la raíz.
+%df: la derivada de la función f.
+%x0: el valor inicial para la iteración.
+
+tic();
+it = 0;
+fx=f(x0);
+while it < kmax
+  it++;
+    x = x0 -(fx/df(x0));
+    #fx0 = f(x0);
+    fx = f(x);
+    abs(fx);
+    %rh(it) = max([abs(fx), abs((x-x0)/x)])
+    %rh(it) = abs((x-x0)/x)
+    rh(it) = abs((x-x0));
+    if rh(it) < tol*abs(x)
+      break;
+    endif
+
+    x0 = x;
+
+endwhile
+t =toc();
+endfunction

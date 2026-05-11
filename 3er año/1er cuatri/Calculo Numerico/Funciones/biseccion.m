@@ -1,7 +1,7 @@
 function [x, h] = biseccion(f, xmin, xmax, kmax, tol)
-  if f(xmin) * f(xmax) > 0
-    error('Error: La función no cambia de signo en los extremos del intervalo.');
-  endif
+  %if f(xmin) * f(xmax) > 0
+  %  error('Error: La función no cambia de signo en los extremos del intervalo.');
+  %endif
   a = xmin;
   b = xmax;
   h = [];
