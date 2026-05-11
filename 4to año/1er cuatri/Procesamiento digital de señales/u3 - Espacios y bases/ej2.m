@@ -16,6 +16,7 @@ amplitudes = [0.5, 1, 2];
 for A = amplitudes
     x_test = A * sin(2 * pi * f_ref * t);
     % calculo de producto interno
+    %prod_int = (x_ref*x_test')/(norm(x_ref)*norm(x_test));
     prod_int = sum(x_ref .* x_test);
     fprintf('Amplitud %.1f -> Producto Interno: %.2f\n', A, prod_int);
 end

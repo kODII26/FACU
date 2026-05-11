@@ -14,7 +14,7 @@ phi1 = sqrt(3/2) * t;
 phi2 = sqrt(5/2) * (1.5*t.^2 - 0.5);
 phi3 = sqrt(7/2) * (2.5*t.^3 - 1.5*t);
 
-% calculo de coeficientes por proyeccion ortogonal
+% calculo de coeficientes por proyeccion ortonormal
 a0 = sum(f .* phi0) * dt;
 a1 = sum(f .* phi1) * dt;
 a2 = sum(f .* phi2) * dt;
