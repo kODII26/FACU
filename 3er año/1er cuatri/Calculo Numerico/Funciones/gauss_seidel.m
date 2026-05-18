@@ -13,9 +13,7 @@ function [x,it,r_h]=gauss_seidel(A,b,x0,maxit,tol)
 
     for i=1:n
 
-      x(i) = ( b(i) ...
-             - A(i,1:i-1)*x(1:i-1) ...
-             - A(i,i+1:n)*x0(i+1:n) ) / A(i,i);
+      x(i) = ( b(i) - A(i,1:i-1)*x(1:i-1) - A(i,i+1:n)*x0(i+1:n) ) / A(i,i);
 
     endfor
 
@@ -24,16 +22,16 @@ function [x,it,r_h]=gauss_seidel(A,b,x0,maxit,tol)
     % =========================
 
     % 1) Error relativo entre iteraciones
-    %err = norm(x-x0,inf)/norm(x,inf);
+    err = norm(x-x0,inf)/norm(x,inf);
 
     % 2) Norma infinita del residuo
-    %err = norm(b-A*x, inf);
+    %err = norm(A*x-b, inf);
 
     % 3) Norma infinita del residuo relativo
     %err = norm(b-A*x, inf)/norm(b,inf);
 
     % 4) Error absoluto
-    err = norm(x-x0,inf);
+    %err = norm(x-x0,inf);
 
     r_h=[r_h;err];
 
