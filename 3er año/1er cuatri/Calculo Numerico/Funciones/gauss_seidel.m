@@ -1,3 +1,4 @@
+
 function [x,it,r_h]=gauss_seidel(A,b,x0,maxit,tol)
 
   n=length(b);
