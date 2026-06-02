@@ -1,5 +1,5 @@
 1;
-addpath('../Funciones creadas');
+addpath('..\Funciones creadas');
 
 clear;
 clc;
