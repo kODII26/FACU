@@ -5,10 +5,18 @@ y=[432 599 1012 1909 2977 4190 5961];
 
 
 % item a
-p6=polyfit(x,y,6);
+p6=polyfit(x,y,6); %polinomio de grado 6 que interpola
 y6=polyval(p6,x);
 
+%polyfit y lagrange es lo mismo si tenes 4 datos y buscas el
+%polinomio de grado 3 (lagranga siempre busca el polinomio de grado n-1
+%ahora, si queres un polinomio de + o - grados, tenes q usar polyfit
+%y ahi se diferencia de lagrange
+
+
 % item b
+%'que mejor aproxima en el sentido de cuadrados m´ınimos '
+%-> minimizar error cuadratico (de esto se encarga polyfit)
 p1= polyfit(x,y,1);
 y1=polyval(p1,x);
 

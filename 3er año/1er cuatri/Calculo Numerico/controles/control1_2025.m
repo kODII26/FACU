@@ -1,4 +1,4 @@
-
+addpath('../Funciones');
 n=40;
 A= zeros(n,n)+diag(2*ones(n,1),0) + diag(-1*ones(n-1,1),1) + diag(-1*ones(n-1,1),-1);
 
@@ -12,14 +12,14 @@ x0=zeros(n,1);
 maxit=10000;
 tol=1e-5;
 
-[x_j,it_j,r_h_j,t_j]=jacobi(A,b,x0,maxit,tol);
+[x_j,it_j,r_h_j]=jacobi(A,b,x0,maxit,tol);
 disp('Iteraciones jacobi'), disp(it_j);
 
-[x_gs,it_gs,r_h_gs,t_gs]=gauss_seidel(A,b,x0,maxit,tol);
+[x_gs,it_gs,r_h_gs]=gauss_seidel(A,b,x0,maxit,tol);
 disp('Iteraciones gs'), disp(it_gs);
 
 w=1.85;
-[x_sor,it_sor,r_h_sor,t_sor]=sor(A,b,x0,maxit,tol,w);
+[x_sor,it_sor,r_h_sor]=sor(A,b,x0,maxit,tol,w);
 disp('Iteraciones sor'), disp(it_sor);
 
 
@@ -50,14 +50,5 @@ D=diag(diag(A));
 L=tril(A,-1);
 U=triu(A,1);
 
-Tw= inv(D+w*L)*((1-w)*D-w*U)
-
-
-
-
-
-
-
-
-
+Tw= inv(D+w*L)*((1-w)*D-w*U);
 

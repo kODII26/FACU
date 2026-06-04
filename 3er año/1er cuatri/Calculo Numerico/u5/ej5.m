@@ -1,16 +1,9 @@
-clear;
-clc;
-close all;
 
-%% =====================
-%% ETAPA 1
-%% =====================
+%1er recorrido
 
 t1 = [0 1 2];
-
 x1 = [0 2 6];
 y1 = [0 4 6];
-
 
 dfx1 = [0 0]; % ya que parte del reposo y en t=2 se detiene
 dfy1 = [0 0];
@@ -19,9 +12,7 @@ dfy1 = [0 0];
 [ay1,by1,cy1,dy1] = cubic_spline_clamped(t1,y1,dfy1);
 % llamo 2 veces, una para ver como evoluciona en x y otra en y
 
-%% =====================
-%% ETAPA 2
-%% =====================
+%2do recorrido
 
 t2 = [2 3 4];
 
@@ -34,10 +25,9 @@ dfy2 = [0 0];
 [ax2,bx2,cx2,dx2] = cubic_spline_clamped(t2,x2,dfx2);
 [ay2,by2,cy2,dy2] = cubic_spline_clamped(t2,y2,dfy2);
 
-%% =====================
-%% EVALUACION
-%% =====================
 
+
+%evaluacion
 tt1 = linspace(0,2,300);
 tt2 = linspace(2,4,300);
 
@@ -47,10 +37,7 @@ yt1 = spline_eval(tt1,t1,ay1,by1,cy1,dy1);
 xt2 = spline_eval(tt2,t2,ax2,bx2,cx2,dx2);
 yt2 = spline_eval(tt2,t2,ay2,by2,cy2,dy2);
 
-%% =====================
-%% x vs t
-%% =====================
-
+%grafico x vs t
 figure
 
 plot(tt1,xt1,'b','linewidth',2)
@@ -69,10 +56,8 @@ ylabel('x')
 
 legend('Etapa 1','Etapa 2')
 
-%% =====================
-%% y vs t
-%% =====================
 
+% y vs t
 figure
 
 plot(tt1,yt1,'b','linewidth',2)
@@ -91,10 +76,8 @@ ylabel('y')
 
 legend('Etapa 1','Etapa 2')
 
-%% =====================
-%% Trayectoria plana
-%% =====================
 
+%% Trayectoria plana
 figure
 
 plot(xt1,yt1,'b','linewidth',2)

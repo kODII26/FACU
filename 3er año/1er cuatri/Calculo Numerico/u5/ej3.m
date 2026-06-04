@@ -1,32 +1,19 @@
-clear;
-clc;
-close all;
-
-%% ==========================
-%% Datos originales
-%% ==========================
 
 x = linspace(-1,1,21);
-y = sin(2*pi*x);
+y = sin(2*pi.*x);
 
-%% Polinomio de Lagrange
-
+%polinomio de Lagrange
 [P,L] = Lagrange(x,y);
 
-%% Spline cúbico natural
-
+%spline cúbico natural
 [a,b,c,d] = cubic_spline_natural(x,y);
 
-%% Malla fina para graficar
-
+%para graficar
 xx = linspace(-1,1,1000);
 
-%% Evaluaciones
-
+%evaluaciones
 yf = sin(2*pi*xx);
-
 yL = polyval(P,xx);
-
 yS = spline_eval(xx,x,a,b,c,d);
 
 %% Gráfico
@@ -48,28 +35,18 @@ title('Datos originales')
 xlabel('x')
 ylabel('y')
 
-%% ==========================
-%% Datos perturbados
-%% ==========================
 
+%con ruido
 yp = zeros(size(x));
 
 for i=1:length(x)
   yp(i) = sin(2*pi*x(i)) + (-1)^(i+1)*1e-4;
 endfor
 
-%% Lagrange perturbado
-
 [Pp,Lp] = Lagrange(x,yp);
-
-%% Spline perturbado
-
 [a2,b2,c2,d2] = cubic_spline_natural(x,yp);
 
-%% Evaluaciones
-
 yLp = polyval(Pp,xx);
-
 ySp = spline_eval(xx,x,a2,b2,c2,d2);
 
 %% Gráfico

@@ -1,5 +1,5 @@
 format long;
-addpath('Funciones');
+addpath('../Funciones');
 tol=1e-6;
 kmax=100;
 

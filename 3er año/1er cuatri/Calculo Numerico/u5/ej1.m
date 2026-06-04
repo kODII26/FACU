@@ -1,10 +1,10 @@
-clear;
-clc;
+
 
 x = [3 5 7 9]';
 y = [1.2 1.7 2.0 2.1]';
 
 %% Metodo de Lagrange
+% para polinomio de interpolacion
 
 [P,L] = Lagrange(x',y');
 
@@ -13,7 +13,8 @@ disp(P)
 
 %% Metodo de coeficientes indeterminados
 
-V = [x.^3 x.^2 x ones(length(x),1)];
+% matriz de Vandermonde
+V = [x.^3 x.^2 x ones(length(x),1)]; %octave pone los vectores como columnas
 
 coef = GaussLUPP(V,y);
 
