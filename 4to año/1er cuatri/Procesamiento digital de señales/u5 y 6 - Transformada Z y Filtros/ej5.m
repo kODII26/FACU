@@ -5,17 +5,17 @@ close all;
 %ruido de linea: 50hz
 %banda rechazada: entre 48 y 52 hz
 
-% FILTRO FIR RECHAZA-BANDA PARA ELIMINAR RUIDO DE 50 Hz
+% filtro fir rechaza banda
 
-fs = 300; % frecuencia de muestreo
-f1 = 48; % inicio banda rechazada
-f2 = 52; % fin banda rechazada
+fm = 300;
+f1 = 48;
+f2 = 52;
 
-% frecuencias angulares digitales
-w1 = 2*pi*f1/fs;
-w2 = 2*pi*f2/fs;
+% frecuencias angulares
+w1 = 2*pi*f1/fm;
+w2 = 2*pi*f2/fm;
 
-%% PARTE A - COMPARACION DE VENTANAS
+%item a
 N = 41;
 M = (N-1)/2;
 n = -M:M;
@@ -42,9 +42,9 @@ h_hamm  = h .* w_hamm;
 h_black = h .* w_black;
 
 % respuestas en frecuencia
-[Hrect,f]  = freqz(h_rect ,1,2048,fs);
-[Hhamm,~]  = freqz(h_hamm ,1,2048,fs);
-[Hblack,~] = freqz(h_black,1,2048,fs);
+[Hrect,f]  = freqz(h_rect ,1,2048,fm);
+[Hhamm,~]  = freqz(h_hamm ,1,2048,fm);
+[Hblack,~] = freqz(h_black,1,2048,fm);
 
 figure(1)
 
@@ -61,7 +61,8 @@ title('Comparación de ventanas (N = 41)')
 
 legend('Rectangular','Hamming','Blackman')
 
-%% PARTE B - COMPARACION DE LONGITUDES
+%Compare los resultados obtenidos con diferentes
+%ventanas de truncado
 Ns = [21 41 81]; % tomo 3 N cualquiera
 
 figure(2)
@@ -85,7 +86,7 @@ for N = Ns
     % FIR final
     h_fir = h .* w;
     % respuesta en frecuencia
-    [H,f] = freqz(h_fir,1,2048,fs);
+    [H,f] = freqz(h_fir,1,2048,fm);
     plot(f,20*log10(abs(H)+eps),'LineWidth',1.5)
 end
 
@@ -97,7 +98,8 @@ title('Comparación para distintas longitudes (ventana Hamming)')
 
 legend('N = 21','N = 41','N = 81')
 
-%% PARTE C - RESPUESTAS AL IMPULSO
+ %diferentes cantidades de muestras en la respuesta al
+%impulso
 figure(3)
 for i = 1:length(Ns)
     N = Ns(i);

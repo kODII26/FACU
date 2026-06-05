@@ -2,7 +2,7 @@
 La relacion entre TF y TZ  es que si evaluas X(z) con z=r*e^jw
 con r=1 , eso sera equivalente a evaluar la TF sobre los puntos que estan sobre el circulo
 
-Si evaluas H(z) sobre el circulo unitario encontrare la TF de la respuesta
+Si evaluas H(z) sobre el circulo unitario encontras la TF de la respuesta
 al impulso h(n).
 
 La transformada de la respuesta al impulso se llama respuesta en frecuencia(

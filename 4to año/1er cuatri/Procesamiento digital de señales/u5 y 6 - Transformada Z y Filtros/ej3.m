@@ -1,7 +1,7 @@
 % zplane dibuja los polos y los ceros en el plano Z
 pkg load signal
 
-a= [1 -1.7 0.8 -0.1]; % son los productos desarrollados
+a= [1 -1.7 0.8 -0.1]; % son los productos desarrollados del denominador
 
 b= [1 -2 2 -1];
 
