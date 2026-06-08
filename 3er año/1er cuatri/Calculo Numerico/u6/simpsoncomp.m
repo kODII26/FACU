@@ -15,7 +15,7 @@ L = numel(x) - 1;
 if rem(L,2)
 % Chequear en la linea de comandos
 % que devuelve rem(L,2) para distintos valores de L
-disp(’Atencion: Tiene que dar una cantidad impar de datos’)
+disp('Atencion: Tiene que dar una cantidad impar de datos')
 Q = NaN;
 return
 end
