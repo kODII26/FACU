@@ -3,6 +3,7 @@ addpath('../Funciones creadas');
 
 #Genero una senoidal
 fs=1;
+fm=10;
 phi=0;
 t_inicial=0;
 t_final=1;
