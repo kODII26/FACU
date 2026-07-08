@@ -40,5 +40,5 @@ for i = n-1:-1:1
 endfor
 
   a = y(1:n-1);
-  c = c(1:n-1)';
+  c = c(1:n-1);
 endfunction
