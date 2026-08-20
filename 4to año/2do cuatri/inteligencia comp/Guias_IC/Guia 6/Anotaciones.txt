@@ -1,0 +1,39 @@
+Evaluación de la población
+
+A todos los individuos (padres actuales) se les calcula la función objetivo → obtenés un ranking de qué tan buenos son.
+
+Elitismo (guardar al mejor)
+
+Te asegurás de que el mejor encontrado hasta ahora no se pierda.
+
+Esto evita que un buen individuo se destruya por mala suerte en cruza o mutación.
+
+Selección (ej. torneo)
+
+Elegís varios padres para reproducirse.
+
+No siempre es el mejor absoluto, sino “los mejores de a pares” → esto mantiene diversidad.
+
+Cruza
+
+Los padres seleccionados producen hijos mezclando bits (genes).
+
+La idea es combinar características de dos soluciones buenas para ver si la combinación da algo mejor.
+
+Mutación
+
+De vez en cuando, un bit cambia de 0 → 1 o de 1 → 0.
+
+Esto introduce variación aleatoria → como “pequeñas innovaciones” que pueden descubrir regiones nuevas.
+
+Nueva generación
+
+Los hijos reemplazan a los padres.
+
+El mejor padre (elitismo) también se mantiene.
+
+Repetición
+
+En la próxima iteración, evaluás a los hijos → alguno puede superar al padre.
+
+Si pasa, actualizás el “mejor global” encontrado hasta el momento.

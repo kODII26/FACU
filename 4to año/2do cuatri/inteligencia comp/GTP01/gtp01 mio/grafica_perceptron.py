@@ -10,8 +10,7 @@ def grafica_perceptron(training, max_epocas, tol, tasa):
 
     w = (np.random.rand(cant_entradas+1)*2-1)*0.5
     yd = M[:,cant_entradas]
-    def f_sign(valor):
-        return 1 if valor >= 0 else -1
+    f_sign = lambda y: 1*(y>=0) -1*(y<0)
 
 
     fig, ax = plt.subplots()    #devuelve una tupla, figura y ejes
@@ -51,7 +50,7 @@ def grafica_perceptron(training, max_epocas, tol, tasa):
         errores = np.sum(yd != y_obtenida)
         miss = errores/cant_patrones
         y = w[0]/w[2]- w[1]/w[2]*x
-        line.set_ydata(y)
+        line.set_ydata(y) # mueve la recta que ya existe
         if tol>=miss or frame == max_epocas - 1:
             ani.event_source.stop() #detiene la animacion
         return line,
