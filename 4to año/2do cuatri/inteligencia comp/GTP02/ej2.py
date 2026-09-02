@@ -3,14 +3,14 @@ import numpy as np
 import pandas as pd
 
 
-capas = [2, 4, 1]    
+capas = [2, 6,4, 1]    
 gamma = 0.1 # tasa de aprendizaje
 max_epocas = 1000  # maximo de epocas
-tol = 0.001 # tolerancia del error cuadratico medio
+tol = 0.05 # tolerancia del error cuadratico medio
 
 
-data_train = pd.read_csv("XOR_trn.csv", header=None).to_numpy()
-data_test = pd.read_csv("XOR_tst.csv", header=None).to_numpy()
+data_train = pd.read_csv("concent_trn.csv", header=None).to_numpy()
+data_test = pd.read_csv("concent_tst.csv", header=None).to_numpy()
 
 # separo entradas y salidas deseadas
 X_train = data_train[:, :-1] # todas las columnas menos la ultima
@@ -120,8 +120,8 @@ def forward(x):
     for c in range(cant_capas - 1):
         entrada_con_bias = np.concatenate(([-1], entrada))
         lin = np.dot(pesos[c], entrada_con_bias)
-        entrada = sigmoide(lin)#la salida obtenida se convierte en la entrada de la siguiente capa
-    return entrada #al terminar de propagar, devuelve la salida de la ultima capa 
+        entrada = sigmoide(lin)
+    return entrada
 
 # evaluacion en entrenamiento
 print("\nResultados entrenamiento:")
@@ -149,7 +149,7 @@ print("Error de clasificacion:", miss_tst * 100, "%")
 
 # grafico de clasificacion entrenamiento
 plt.figure()
-plt.title("Clasificacion - XOR Entrenamiento")
+plt.title("Clasificacion - Concentrico Entrenamiento")
 plt.scatter(X_train[Yd_train == 1, 0], X_train[Yd_train == 1, 1],
             color='blue', marker='o', label='Clase 1')
 plt.scatter(X_train[Yd_train == -1, 0], X_train[Yd_train == -1, 1],
@@ -177,7 +177,7 @@ plt.show()
 
 # grafico de clasificacion testeo
 plt.figure()
-plt.title("Clasificacion - XOR Testeo")
+plt.title("Clasificacion - Concentrico Testeo")
 plt.scatter(X_test[Yd_test == 1, 0], X_test[Yd_test == 1, 1],
             color='blue', marker='o', label='Clase 1')
 plt.scatter(X_test[Yd_test == -1, 0], X_test[Yd_test == -1, 1],
